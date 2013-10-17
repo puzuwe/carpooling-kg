@@ -1,0 +1,15 @@
+default:
+  formatter:
+    name: progress
+  extensions:
+    Behat\Symfony2Extension\Extension:
+      mink_driver: true
+      kernel:
+        env: test
+        debug: true
+      bundle: ApplicationSonataUserBundle
+    Behat\MinkExtension\Extension:
+      base_url: 'http://localhost/school/web/app_test.php'
+      default_session: symfony2
+      goutte: ~
+      selenium2: ~
