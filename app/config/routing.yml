@@ -1,3 +1,7 @@
+application_podorozhniki_main:
+    resource: "@ApplicationPodorozhnikiMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
 
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'

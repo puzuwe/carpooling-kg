@@ -9,7 +9,7 @@ default:
         debug: true
       bundle: ApplicationSonataUserBundle
     Behat\MinkExtension\Extension:
-      base_url: 'http://localhost/school/web/app_test.php'
+      base_url: 'http://localhost/podorozhniki.kg/web/app_dev.php'
       default_session: symfony2
       goutte: ~
       selenium2: ~

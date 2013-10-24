@@ -1,0 +1,3 @@
+application_podorozhniki_main_homepage:
+    pattern:  /
+    defaults: { _controller: ApplicationPodorozhnikiMainBundle:Default:index }
