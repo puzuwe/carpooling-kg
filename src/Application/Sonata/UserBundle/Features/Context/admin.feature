@@ -1,17 +1,15 @@
 Feature: Authorization
-  In order to be able to see Admin Interface
+  In order to see Admin Interface
   As an Administrator
   I need to be able to authenticate
 # Use @javascript for browser realtime emulation
-  #@javascript
+  @javascript
   Scenario: Sucessfully Authenticate
-    Given I am on "admin/login/"
-    Then I should see "No route found"
-    And I should see "Password:"
-    When I fill in "username" with "admin"
+    Given I am on "admin/login"
+    When I fill in "_username" with "admin"
     And  I fill in "password" with "password"
     And I press "_submit"
     Then I should be on "/admin/dashboard"
     And I should see "Logout"
     When I follow "Logout"
-    Then should be on "/"
+    Then should be on "/en/"

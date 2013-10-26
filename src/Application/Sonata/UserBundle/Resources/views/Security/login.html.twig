@@ -42,9 +42,9 @@
 
 </form>
     <div class="col-lg-offset-2 col-lg-4">
-        <a href="{{ path('fos_user_resetting_request') }}">Forgot password</a>
+        <a href="{{ path('fos_user_resetting_request') }}">{{ 'user.forgotPassword'|trans }}</a>
         <div class="pull-right">
-        <a href="{{ path('fos_user_registration_register') }}">Register</a>
+        <a href="{{ path('fos_user_registration_register') }}">{{ 'user.register'|trans }}</a>
         </div>
     </div>
 {% endblock fos_user_content %}

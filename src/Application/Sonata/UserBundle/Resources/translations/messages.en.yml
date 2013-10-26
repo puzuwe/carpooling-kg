@@ -1,0 +1,3 @@
+user:
+    register: Register
+    forgotPassword: Forgot password?

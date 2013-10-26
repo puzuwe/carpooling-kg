@@ -78,3 +78,7 @@ fos_user:
 
     group:
         group_class:  Application\Sonata\UserBundle\Entity\Group
+
+    registration:
+        confirmation:
+            enabled:  true

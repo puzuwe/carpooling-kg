@@ -25,6 +25,8 @@ security:
                 use_forward:    false
                 check_path:     /admin/login_check
                 failure_path:   null
+                default_target_path:  /admin/dashboard
+                always_use_default_target_path: true
             logout:
                 path:           /admin/logout
             anonymous:          true
@@ -40,11 +42,12 @@ security:
             context:             user
             form_login:
                 provider:       fos_userbundle
-                login_path:     /login
+                login_path:     /%locale%/login
                 use_forward:    false
-                check_path:     /login_check
+                check_path:     /%locale%/login_check
                 failure_path:   null
-            logout:             true
+            logout:
+                path:           /%locale%/logout
             anonymous:          true
 
     access_control:
