@@ -1,3 +1,16 @@
+root:
+    path:     /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /%locale%
+
+application_podorozhniki_main:
+    resource: "@ApplicationPodorozhnikiMainBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale:  en|tr|ru
+
 
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
@@ -15,22 +28,35 @@ _sonata_admin:
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix:   /{_locale}
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale:  en|tr|ru
 
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-    prefix: /profile
+    prefix: /{_locale}/profile/
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale:  en|tr|ru
 
 fos_user_register:
     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix: /register
+    prefix: /{_locale}/register/
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale:  en|tr|ru
 
 fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-    prefix: /resetting
+    prefix: /{_locale}/resetting/
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale:  en|tr|ru
 
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /change-password
+    prefix: /change-password/
 
 sonata_cache_cache:
     resource: '@SonataCacheBundle/Resources/config/routing/cache.xml'

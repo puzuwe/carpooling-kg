@@ -1,0 +1,13 @@
+#header{
+    width: 940px;
+    height: 100px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+#login{
+    float: right;
+}
+#body{
+    margin: 0 auto;
+    width: 940px;
+}

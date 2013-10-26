@@ -1,0 +1,12 @@
+{% form_theme form 'ApplicationSonataUserBundle:Form:fields.html.twig' %}
+<form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST"
+      class="form-horizontal">
+    {{ form_widget(form) }}
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-4">
+            <input type="submit" value="{{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }}"
+                   class="btn btn-default"/>
+        </div>
+
+    </div>
+</form>

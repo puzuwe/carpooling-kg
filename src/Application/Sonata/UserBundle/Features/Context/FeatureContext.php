@@ -48,6 +48,15 @@ class FeatureContext extends MinkContext //MinkContext if you want to test web
         $this->kernel = $kernel;
     }
 
+
+    /**
+     * @Given /^I wait (\d+)$/
+     */
+    public function iWait($milliseconds)
+    {
+        sleep($milliseconds);
+    }
+
 //
 // Place your definition and hook methods here:
 //

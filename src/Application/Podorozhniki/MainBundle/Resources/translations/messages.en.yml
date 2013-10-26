@@ -1,0 +1,17 @@
+routes:
+    routes: Ride
+    all:  All rides
+    nearest:  Nearest rides
+    popular:  Popular rides
+events:
+    events: Events
+    all:  All events
+    addedByMe:  Added by me
+    addEvent: Add event
+places:
+    places: Places
+    favorite: Favorite places
+    all:  All places
+    addedByMe:  Added by me
+    addPublic: Add public place
+
