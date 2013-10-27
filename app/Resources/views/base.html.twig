@@ -19,7 +19,10 @@
     </head>
     <body>
         {{ include('_header.html.twig') }}
-        <div id="body">
+        <div class="container">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ knp_menu_render("PodorozhnikiMainBundle:Builder:userMenu") }}
+            {% endif %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
 

@@ -15,4 +15,10 @@ places:
     addedByMe:  Добавленные мной общ. места
     addPublic: Добавить общественное место
 
-
+user:
+    menu:
+      my:
+        rides:    Мои Маршруты
+        messages:   Мои сообщения
+      calendar:   Календарь
+      search:     Поиск

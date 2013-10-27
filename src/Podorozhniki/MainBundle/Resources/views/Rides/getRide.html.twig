@@ -1,10 +1,3 @@
-{% extends "::base.html.twig" %}
-
-{% block title %}PodorozhnikiMainBundle:Rides:getRide{% endblock %}
-
-{% block body %}
-<h1>Welcome to the Rides:getRide page</h1>
-    <h1>Ride</h1>
 
     <table class="record_properties">
         <tbody>
@@ -50,17 +43,3 @@
         </tr>
         </tbody>
     </table>
-
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('get_rides') }}">
-                Back to the list
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('put_ride', { 'id': ride.id }) }}">
-                Edit
-            </a>
-        </li>
-    </ul>
-{% endblock %}

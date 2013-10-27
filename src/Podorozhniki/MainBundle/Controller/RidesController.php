@@ -19,7 +19,7 @@ class RidesController extends FOSRestController
         else{
             $user = $this->getDoctrine()
                 ->getRepository("ApplicationSonataUserBundle:User")->find($userId);
-            return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRides.html.twig",array("userRides"=>$user)));
+            return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRides.html.twig",array("rides"=>$user->getRides())));
         }
     }
 

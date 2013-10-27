@@ -44,4 +44,15 @@ class Builder extends  ContainerAware{
         return $menu;
     }
 
+    public function userMenu(FactoryInterface $factory, array $options){
+        $menu = $factory->createItem("userMenu",array('childrenAttributes'=>array('class'=>"nav nav-pills")));
+        $translator = $this->container->get("translator");
+
+        $menu->addChild($translator->trans("user.menu.my.rides"),array('route'=>'get_user_rides','routeParameters'=>array('userId'=>1)));
+        $menu->addChild($translator->trans("user.menu.calendar"),array("uri"=>"/"));
+        $menu->addChild($translator->trans("user.menu.my.messages"),array("uri"=>"/"));
+        $menu->addChild($translator->trans("user.menu.search"),array("uri"=>"/"));
+        return $menu;
+    }
+
 } 

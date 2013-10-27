@@ -44,7 +44,7 @@ security:
                 provider:       fos_userbundle
                 login_path:     /%locale%/login
                 use_forward:    false
-                check_path:     /%locale%/login_check
+                check_path:     /en/login_check
                 failure_path:   null
             logout:
                 path:           /%locale%/logout

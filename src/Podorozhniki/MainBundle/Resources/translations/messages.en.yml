@@ -15,3 +15,10 @@ places:
     addedByMe:  Added by me
     addPublic: Add public place
 
+user:
+    menu:
+        my:
+            rides:  Dashboard
+            messages: My messages
+        calendar: Calendar
+        search: Search
