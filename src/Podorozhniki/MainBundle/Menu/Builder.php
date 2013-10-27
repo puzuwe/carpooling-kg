@@ -6,7 +6,7 @@
  * Time: 16:33
  */
 
-namespace Application\Podorozhniki\MainBundle\Menu;
+namespace Podorozhniki\MainBundle\Menu;
 
 
 use Knp\Menu\FactoryInterface;
@@ -27,7 +27,7 @@ class Builder extends  ContainerAware{
 
         $routes = $menu->addChild($translator->trans('routes.routes'),$menu_attributes);
 
-        $routes->addChild($translator->trans('routes.all'),array('uri'=>'/'));
+        $routes->addChild($translator->trans('routes.all'),array('route'=>'get_user_rides','routeParameters'=>array('userId'=>0)));
         $routes->addChild($translator->trans('routes.nearest'),array('uri'=>'/'));
         $routes->addChild($translator->trans('routes.popular'),array('uri'=>'/'));
 

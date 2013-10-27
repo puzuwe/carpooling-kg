@@ -32,7 +32,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new \JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
-            new Application\Podorozhniki\MainBundle\ApplicationPodorozhnikiMainBundle(),
+            new Podorozhniki\MainBundle\PodorozhnikiMainBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

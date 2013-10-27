@@ -1,0 +1,7 @@
+parameters:
+#    podorozhniki_main.example.class: Podorozhniki\MainBundle\Example
+
+services:
+#    podorozhniki_main.example:
+#        class: %podorozhniki_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

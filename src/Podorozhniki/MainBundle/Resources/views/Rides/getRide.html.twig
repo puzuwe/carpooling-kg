@@ -1,0 +1,66 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}PodorozhnikiMainBundle:Rides:getRide{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Rides:getRide page</h1>
+    <h1>Ride</h1>
+
+    <table class="record_properties">
+        <tbody>
+        <tr>
+            <th>{{ ride.who.name }}</th>
+            <td>{{ ride.user.firstname }}</td>
+        </tr>
+        <tr>
+            <th>Departure</th>
+            <td>{{ ride.departure }}</td>
+        </tr>
+        <tr>
+            <th>Destination</th>
+            <td>{{ ride.destination }}</td>
+        </tr>
+        <tr>
+            <th>Departuretime</th>
+            <td>{{ ride.departuretime|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Departureanytime</th>
+            <td>{{ ride.departureanytime }}</td>
+        </tr>
+        <tr>
+            <th>Numberofseats</th>
+            <td>{{ ride.numberofseats }}</td>
+        </tr>
+        <tr>
+            <th>Oneseatcost</th>
+            <td>{{ ride.oneseatcost }}</td>
+        </tr>
+        <tr>
+            <th>Returndate</th>
+            <td>{{ ride.returndate|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Returnanytime</th>
+            <td>{{ ride.returnanytime }}</td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ ride.id }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('get_rides') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('put_ride', { 'id': ride.id }) }}">
+                Edit
+            </a>
+        </li>
+    </ul>
+{% endblock %}

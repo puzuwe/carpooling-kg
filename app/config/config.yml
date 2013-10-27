@@ -62,7 +62,7 @@ doctrine:
                     FOSUserBundle: ~
                     ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
-
+                    PodorozhnikiMainBundle: ~
 # Swiftmailer Configuration
 swiftmailer:
     transport: %mailer_transport%
@@ -82,3 +82,8 @@ fos_user:
     registration:
         confirmation:
             enabled:  true
+
+fos_rest:
+    routing_loader:
+        include_format: false
+        default_format: html

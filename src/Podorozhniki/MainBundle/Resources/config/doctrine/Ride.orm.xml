@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Podorozhniki\MainBundle\Entity\Ride" table="ride">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="departure" type="string" column="departure" length="255" nullable="false"/>
+    <field name="destination" type="string" column="destination" length="255" nullable="false"/>
+    <field name="departuretime" type="datetime" column="departureTime" nullable="false"/>
+    <field name="departureanytime" type="boolean" column="departureAnyTime" nullable="true"/>
+    <field name="numberofseats" type="integer" column="numberOfSeats" nullable="false"/>
+    <field name="oneseatcost" type="decimal" column="oneSeatCost" nullable="false"/>
+    <field name="returndate" type="datetime" column="returnDate" nullable="false"/>
+    <field name="returnanytime" type="boolean" column="returnAnyTime" nullable="true"/>
+      <many-to-one target-entity="Who" field="who" inversed-by="rides" />
+      <many-to-one target-entity="\Application\Sonata\UserBundle\Entity\User" field="user"/>
+  </entity>
+</doctrine-mapping>

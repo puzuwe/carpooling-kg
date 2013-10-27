@@ -1,0 +1,8 @@
+users:
+    type: rest
+    resource: Application\Sonata\UserBundle\Controller\UsersController
+
+rides:
+    type:         rest
+    parent:       users
+    resource:     Podorozhniki\MainBundle\Controller\RidesController

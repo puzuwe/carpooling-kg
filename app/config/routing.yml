@@ -4,14 +4,6 @@ root:
         _controller: FrameworkBundle:Redirect:urlRedirect
         path: /%locale%
 
-application_podorozhniki_main:
-    resource: "@ApplicationPodorozhnikiMainBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}
-    defaults: { _locale: %locale% }
-    requirements:
-        _locale:  en|tr|ru
-
-
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
     prefix: /admin
@@ -61,3 +53,18 @@ fos_user_change_password:
 sonata_cache_cache:
     resource: '@SonataCacheBundle/Resources/config/routing/cache.xml'
     prefix: /
+
+application_sonata_user:
+    type: rest
+    resource: "@ApplicationSonataUserBundle/Resources/config/routing/routing.yml"
+    prefix: /{_locale}/
+    defaults: { _locale: en }
+    requirements:
+        _locale:  en|tr|ru
+
+application_podorozhniki_main:
+    resource: "@PodorozhnikiMainBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale:  en|tr|ru
