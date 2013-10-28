@@ -2,6 +2,7 @@
 
 namespace Podorozhniki\MainBundle\Form;
 
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -14,15 +15,14 @@ class RideType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
         $builder
             ->add('departure')
             ->add('destination')
-            ->add('departuretime')
+            ->add('departuretime','datetime',array('input'=>'datetime','widget'=>'single_text'))
             ->add('departureanytime')
             ->add('numberofseats')
             ->add('oneseatcost')
-            ->add('returndate')
+            ->add('returndate','datetime',array('input'=>'datetime','widget'=>'single_text'))
             ->add('returnanytime')
             ->add('who')
             ->add('user')

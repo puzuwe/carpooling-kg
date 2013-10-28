@@ -24,11 +24,12 @@ class Builder extends  ContainerAware{
         $menu = $factory->createItem("top",array('childrenAttributes'=>array('class'=>'nav navbar-nav')));
         $translator = $this->container->get('translator');
 
-        $menu_attributes = array('uri'=>'#',
+        $menu_attributes = array('uri'=>'/',
             'attributes'=>array('class'=>'dropdown'),
             'linkAttributes'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'),
             'childrenAttributes'=>array('class'=>'dropdown-menu'));
 
+        //$menu->addChild($translator->trans('main.homePage'),$menu_attributes);
         $routes = $menu->addChild($translator->trans('routes.routes'),$menu_attributes);
 
         $routes->addChild($translator->trans('routes.all'),array('route'=>'get_user_rides','routeParameters'=>array('userId'=>0)));

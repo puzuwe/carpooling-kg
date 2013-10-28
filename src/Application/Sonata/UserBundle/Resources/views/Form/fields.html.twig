@@ -63,6 +63,32 @@
     {% endspaceless %}
 {% endblock button_row %}
 
+{% block datetime_widget %}
+    {% spaceless %}
+        {% if widget == 'single_text' %}
+            {{ block('form_bootstrap_datetime') }}
+        {% else %}
+            <div {{ block('widget_container_attributes') }}>
+                {{ form_errors(form.date) }}
+                {{ form_errors(form.time) }}
+                {{ form_widget(form.date) }}
+                {{ form_widget(form.time) }}
+            </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock datetime_widget %}
+
+{% block form_bootstrap_datetime %}
+    {% spaceless %}
+            <div class="input-group date form_datetime" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                <input class="form-control" type="text" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+            <input type="hidden" id="dtp_input1" value="" /><br/>
+        {% endspaceless %}
+{% endblock %}
+
 {% block choice_widget_collapsed %}
     {% spaceless %}
         <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %} class="form-control">

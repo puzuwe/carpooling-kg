@@ -6,40 +6,36 @@
             <td>{{ ride.user.firstname }}</td>
         </tr>
         <tr>
-            <th>Departure</th>
+            <th>{{ 'ride.departure'|trans }}</th>
             <td>{{ ride.departure }}</td>
         </tr>
         <tr>
-            <th>Destination</th>
+            <th>{{ 'ride.destination'|trans }}</th>
             <td>{{ ride.destination }}</td>
         </tr>
         <tr>
-            <th>Departuretime</th>
+            <th>{{ 'ride.departureTime'|trans }}</th>
             <td>{{ ride.departuretime|date('Y-m-d H:i:s') }}</td>
         </tr>
         <tr>
-            <th>Departureanytime</th>
+            <th>{{ 'ride.departureAnyTime'|trans }}</th>
             <td>{{ ride.departureanytime }}</td>
         </tr>
         <tr>
-            <th>Numberofseats</th>
+            <th>{{ 'ride.numberOfSeats'|trans }}</th>
             <td>{{ ride.numberofseats }}</td>
         </tr>
         <tr>
-            <th>Oneseatcost</th>
+            <th>{{ 'ride.oneSeatCost'|trans }}</th>
             <td>{{ ride.oneseatcost }}</td>
         </tr>
         <tr>
-            <th>Returndate</th>
+            <th>{{ 'ride.returnDate'|trans }}</th>
             <td>{{ ride.returndate|date('Y-m-d H:i:s') }}</td>
         </tr>
         <tr>
-            <th>Returnanytime</th>
+            <th>{{ 'ride.returnAnyTime'|trans }}</th>
             <td>{{ ride.returnanytime }}</td>
-        </tr>
-        <tr>
-            <th>Id</th>
-            <td>{{ ride.id }}</td>
         </tr>
         </tbody>
     </table>

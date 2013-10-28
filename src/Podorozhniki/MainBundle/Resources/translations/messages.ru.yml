@@ -14,7 +14,6 @@ places:
     all:  Все общественные места
     addedByMe:  Добавленные мной общ. места
     addPublic: Добавить общественное место
-
 user:
     menu:
       my:
@@ -22,3 +21,15 @@ user:
         messages:   Мои сообщения
       calendar:   Календарь
       search:     Поиск
+ride:
+    departure:        От
+    destination:      До
+    departureTime:    Отправление
+    departureAnyTime: Любое время
+    numberOfSeats:    Количество мест
+    oneSeatCost:      Стоимость 1-го места
+    returnDate:       Обратно
+    returnAnyTime:    Любое время
+    addNew:           Добавить новый маршрут
+main:
+        homePage: На главную

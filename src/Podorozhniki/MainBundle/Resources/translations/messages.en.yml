@@ -14,7 +14,6 @@ places:
     all:  All places
     addedByMe:  Added by me
     addPublic: Add public place
-
 user:
     menu:
         my:
@@ -22,3 +21,15 @@ user:
             messages: My messages
         calendar: Calendar
         search: Search
+ride:
+    departure:  From
+    destination:  To
+    departureTime:  Departure time
+    departureAnyTime: Any time
+    numberOfSeats:  Number of seats
+    oneSeatCost:  One seat cost
+    returnDate: Return date
+    returnAnyTime:  Any time
+    addNew: Add new ride
+main:
+    homePage: Home
