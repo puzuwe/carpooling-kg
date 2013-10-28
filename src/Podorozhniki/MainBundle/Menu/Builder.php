@@ -50,10 +50,12 @@ class Builder extends  ContainerAware{
     }
 
     public function userMenu(FactoryInterface $factory, array $options){
+        $user = $this->container->get('security.context')->getToken()->getUser();
+
         $menu = $factory->createItem("userMenu",array('childrenAttributes'=>array('class'=>"nav nav-pills")));
         $translator = $this->container->get("translator");
 
-        $menu->addChild($translator->trans("user.menu.my.rides"),array('route'=>'get_user_rides','routeParameters'=>array('userId'=>1)));
+        $menu->addChild($translator->trans("user.menu.my.rides"),array('route'=>'get_user_rides','routeParameters'=>array('userId'=>$user->getId())));
         $menu->addChild($translator->trans("user.menu.calendar"),array("uri"=>"/"));
         $menu->addChild($translator->trans("user.menu.my.messages"),array("uri"=>"/"));
         $menu->addChild($translator->trans("user.menu.search"),array("uri"=>"/"));

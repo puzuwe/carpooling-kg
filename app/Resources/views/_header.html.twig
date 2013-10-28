@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default " role="navigation">
+<header class="navbar navbar-fixed-top navbar-inverse" role="banner">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -7,41 +7,41 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="{{ path('podorozhniki_main_homepage') }}">Podorozhniki</a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-        {{ knp_menu_render('PodorozhnikiMainBundle:Builder:topMenu') }}
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <li class="dropdown">
-                <a data-toggle="dropdown" href="#" role="button">
-                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
-                    <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel1">
-
-                    <li role="presentation">
-                        <a role="menuitem" tabindex="-1" href="{{ path('fos_user_profile_show') }}">Show profile</a>
-                    </li>
-                    <li role="presentation">
-                        <a role="menuitem" tabindex="-1" href="{{ path('fos_user_profile_edit') }}">Edit profile</a>
-                    <li role="presentation">
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation">
-                        <a role="menuitem" tabindex="-1" href="{{ path('fos_user_security_logout') }}">
-                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                {{ knp_menu_render('PodorozhnikiMainBundle:Builder:topMenu') }}
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" href="#" role="button">
+                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                            <b class="caret"></b>
                         </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel1">
+
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{{ path('fos_user_profile_show') }}">Show
+                                    profile</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{{ path('fos_user_profile_edit') }}">Edit
+                                    profile</a>
+                            <li role="presentation">
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                </a>
+                            </li>
+                        </ul>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                        {% endif %}
                     </li>
                 </ul>
-                {% else %}
-                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                {% endif %}
-            </li>
-        </ul>
             </div>
     </div>
-</nav>
-
-
-
+</header>
+<div class="fixed-header container"></div>

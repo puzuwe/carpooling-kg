@@ -38,7 +38,10 @@ class RidesController extends FOSRestController
         $form = $this->createForm(new RideType(),$ride);
         $form->handleRequest($request);
         if($form->isValid()){
-
+            //$user = $this->getDoctrine()->getRepository("ApplicationSonataUserBundle:User")->find($userId);
+            //$form->get('user')->setData($user);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($ride);
         }
         return new Response("PodorozhnikiMainBundle:Rides:postRides.html.twig",array("form"=>$form->createView()));
 
