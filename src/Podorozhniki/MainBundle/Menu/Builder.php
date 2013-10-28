@@ -14,6 +14,10 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 
 class Builder extends  ContainerAware{
 
+
+    /**
+     * @backupGlobals disabled
+     */
     public function topMenu(FactoryInterface $factory, array $options){
 
 

@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" href="{{ asset('public/bootstrap-3.0.0/css/bootstrap.min.css') }}" media="screen">
-        <link rel="stylesheet" href="{{ asset('public/css/normalize.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('public/css/main.css') }}"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" href="{{ asset('public/bootstrap-3.0.0/css/bootstrap.min.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('public/css/normalize.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('public/css/main.css') }}"/>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="{{ asset('public/bootstrap-3.0.0/assets/js/html5shiv.js') }}"></script>
-        <script src="{{ asset('public/bootstrap-3.0.0/assets/js/respond.min.js') }}"></script>
-        <![endif]-->
-    </head>
-    <body>
-        {{ include('_header.html.twig') }}
-        <div class="container">
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            {{ knp_menu_render("PodorozhnikiMainBundle:Builder:userMenu") }}
-            {% endif %}
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{{ asset('public/bootstrap-3.0.0/assets/js/html5shiv.js') }}"></script>
+    <script src="{{ asset('public/bootstrap-3.0.0/assets/js/respond.min.js') }}"></script>
+    <![endif]-->
+</head>
+<body>
+{{ include('_header.html.twig') }}
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                {{ knp_menu_render("PodorozhnikiMainBundle:Builder:userMenu") }}
+            </div>
+            <div class="col-md-2">
+                <a class=" btn btn-info" href="{{ path('new_user_ride',{'userId':1}) }}">Add new ride</a>
+            </div>
         </div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="//code.jquery.com/jquery.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="{{ asset('public/bootstrap-3.0.0/js/bootstrap.min.js') }}"></script>
-    </body>
+    </div>
+{% endif %}
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+{% block javascripts %}{% endblock %}
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ asset('public/bootstrap-3.0.0/js/bootstrap.min.js') }}"></script>
+</body>
 </html>

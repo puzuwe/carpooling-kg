@@ -5,8 +5,6 @@
 {% block body %}
 <h1>Welcome to the Rides:getRides page</h1>
     {% for ride in rides %}
-        <div class="container">
         {{ include('PodorozhnikiMainBundle:Rides:getRide.html.twig') }}
-        </div>
 {% endfor %}
 {% endblock %}

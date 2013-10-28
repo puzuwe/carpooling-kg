@@ -3,7 +3,7 @@
     {% spaceless %}
         <div class="form-group">
             {{ form_label(form) }}
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 {{ form_errors(form) }}
                 {{ form_widget(form) }}
             </div>
@@ -31,7 +31,7 @@
             {% if label is empty %}
                 {% set label = name|humanize %}
             {% endif %}
-            <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class="col-lg-2 control-label">{{ label|trans({}, translation_domain) }}</label>
+            <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class="col-md-2 control-label">{{ label|trans({}, translation_domain) }}</label>
         {% endif %}
     {% endspaceless %}
 {% endblock form_label %}
@@ -51,3 +51,33 @@
         {% endif %}
     {% endspaceless %}
 {% endblock form_errors %}
+
+{% block button_row %}
+    {% spaceless %}
+
+        <div class="form-group">
+        <div class="col-md-offset-2 col-md-4">
+            {{ form_widget(form,{'attr':{'class':'btn btn-primary'}}) }}
+        </div>
+        </div>
+    {% endspaceless %}
+{% endblock button_row %}
+
+{% block choice_widget_collapsed %}
+    {% spaceless %}
+        <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %} class="form-control">
+            {% if empty_value is not none %}
+                <option value=""{% if required and value is empty %} selected="selected"{% endif %}>{{ empty_value|trans({}, translation_domain) }}</option>
+            {% endif %}
+            {% if preferred_choices|length > 0 %}
+                {% set options = preferred_choices %}
+                {{ block('choice_widget_options') }}
+                {% if choices|length > 0 and separator is not none %}
+                    <option disabled="disabled">{{ separator }}</option>
+                {% endif %}
+            {% endif %}
+            {% set options = choices %}
+            {{ block('choice_widget_options') }}
+        </select>
+    {% endspaceless %}
+{% endblock choice_widget_collapsed %}

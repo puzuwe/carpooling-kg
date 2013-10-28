@@ -3,6 +3,9 @@
 namespace Podorozhniki\MainBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
+use Podorozhniki\MainBundle\Entity\Ride;
+use Podorozhniki\MainBundle\Form\RideType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class RidesController extends FOSRestController
@@ -27,6 +30,27 @@ class RidesController extends FOSRestController
     {
         $ride = $this->getDoctrine()->getRepository("PodorozhnikiMainBundle:Ride")->find($id);
         return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRide.html.twig",array("ride"=>$ride)));
+    }
+
+    public function postRideAction($userId, Request $request)
+    {
+        $ride = new Ride();
+        $form = $this->createForm(new RideType(),$ride);
+        $form->handleRequest($request);
+        if($form->isValid()){
+
+        }
+        return new Response("PodorozhnikiMainBundle:Rides:postRides.html.twig",array("form"=>$form->createView()));
+
+    }
+
+    public function newRideAction($userId)
+    {
+
+        $ride = new Ride();
+        $form = $this->createForm(new RideType(),$ride,array('action'=>$this->generateUrl('post_user_ride',array('userId'=>$userId)),'method'=>'post'));
+        return $this->render("PodorozhnikiMainBundle:Rides:newRide.html.twig",array("form"=>$form->createView()));
+
     }
 
 }

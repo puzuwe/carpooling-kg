@@ -97,4 +97,9 @@ class Who
     {
         return $this->rides;
     }
+
+    public function __ToString()
+    {
+        return $this->getName();
+    }
 }

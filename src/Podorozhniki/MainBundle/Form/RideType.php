@@ -14,6 +14,7 @@ class RideType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('departure')
             ->add('destination')
@@ -24,7 +25,9 @@ class RideType extends AbstractType
             ->add('returndate')
             ->add('returnanytime')
             ->add('who')
-        ;
+            ->add('user')
+            ->add('Add','submit');
+        //$builder->setAttributes(array('class'=>'form-horizontal'));
     }
     
     /**

@@ -1,0 +1,6 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+   {% form_theme form 'ApplicationSonataUserBundle:Form:fields.html.twig' %}
+    {{ form(form,{'attr':{'class':'form-horizontal'}}) }}
+{% endblock %}
