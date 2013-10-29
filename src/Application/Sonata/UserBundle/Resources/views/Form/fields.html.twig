@@ -80,8 +80,8 @@
 
 {% block form_bootstrap_datetime %}
     {% spaceless %}
-            <div class="input-group date form_datetime" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                <input class="form-control" type="text" readonly>
+            <div class="input-group date form_datetime" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="dtp_input1">
+                <input class="form-control" type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty%} value="{{ value }}" {% endif %}  readonly>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
             </div>

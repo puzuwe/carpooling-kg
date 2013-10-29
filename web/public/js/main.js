@@ -10,6 +10,6 @@ $('.form_datetime').datetimepicker({
     todayHighlight: 1,
     startView: 2,
     forceParse: 0,
-    showMeridian: 1,
+    showMeridian: 0,
     pickerPosition: "bottom-left"
 });

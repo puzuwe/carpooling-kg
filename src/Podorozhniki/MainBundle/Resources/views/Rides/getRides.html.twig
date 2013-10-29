@@ -3,8 +3,10 @@
 {% block title %}PodorozhnikiMainBundle:Rides:getRides{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Rides:getRides page</h1>
-    {% for ride in rides %}
-        {{ include('PodorozhnikiMainBundle:Rides:getRide.html.twig') }}
-{% endfor %}
+    <h1>Welcome to the Rides:getRides page</h1>
+    <div class="row">
+        {% for ride in rides %}
+            {{ include('PodorozhnikiMainBundle:Rides:getRide.html.twig') }}
+        {% endfor %}
+    </div>
 {% endblock %}
