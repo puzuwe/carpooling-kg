@@ -9,27 +9,27 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class RideType extends AbstractType
 {
-        /**
+    /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('departure',null,array('attr'=>array('autocomplete'=>'on')))
-            ->add('destination',null,array('attr'=>array('autocomplete'=>'on')))
-            ->add('departuretime','datetime',array('input'=>'datetime','widget'=>'single_text'))
+            ->add('departure', null, array('attr' => array('autocomplete' => 'on')))
+            ->add('destination', null, array('attr' => array('autocomplete' => 'on','onblur'=>'calcRoute()')))
+            ->add('departuretime', 'datetime', array('input' => 'datetime', 'widget' => 'single_text'))
             ->add('departureanytime')
             ->add('numberofseats')
             ->add('oneseatcost')
-            ->add('returndate','datetime',array('input'=>'datetime','widget'=>'single_text'))
+            ->add('returndate', 'datetime', array('input' => 'datetime', 'widget' => 'single_text'))
             ->add('returnanytime')
             ->add('who')
             ->add('user')
-            ->add('Add','submit');
+            ->add('Add', 'submit');
         //$builder->setAttributes(array('class'=>'form-horizontal'));
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
