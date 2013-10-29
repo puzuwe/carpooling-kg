@@ -34,20 +34,16 @@ class RidesController extends FOSRestController
     public function postRideAction($userId, Request $request)
     {
         $ride = new Ride();
-        $form = $this->createForm(new RideType(),$ride);
+        $form = $this->createForm(new RideType($this->getUser()),$ride);
         $form->handleRequest($request);
-
-        //if($form->isValid()){
-
-            //$user = $this->getDoctrine()->getRepository("ApplicationSonataUserBundle:User")->find($userId);
-            //$form->get('user')->setData($user);
+        if($form->isValid()){
             $em = $this->getDoctrine()->getManager();
             $em->persist($ride);
             $em->flush();
 
            return $this->redirect($this->generateUrl("podorozhniki_main_homepage"));
-       // }
-        //return new Response("PodorozhnikiMainBundle:Rides:postRides.html.twig",array("form"=>$form->createView()));
+       }
+       return new Response("PodorozhnikiMainBundle:Rides:postRides.html.twig",array("form"=>$form->createView()));
 
     }
 
@@ -55,7 +51,7 @@ class RidesController extends FOSRestController
     {
 
         $ride = new Ride();
-        $form = $this->createForm(new RideType(),$ride,array('action'=>$this->generateUrl('post_user_ride',array('userId'=>$userId)),'method'=>'post'));
+        $form = $this->createForm(new RideType($this->getUser()),$ride,array('action'=>$this->generateUrl('post_user_ride',array('userId'=>$userId)),'method'=>'post'));
         return $this->render("PodorozhnikiMainBundle:Rides:newRide.html.twig",array("form"=>$form->createView()));
 
     }

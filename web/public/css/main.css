@@ -3,14 +3,11 @@
 }
 #map-canvas {
     height: 500px;
-    width: 500px;
+    width: 100%;
     margin: 0px;
     padding: 0px
 }
-#directions-panel {
-    height: 100%;
-    float: right;
-    width: 390px;
-    overflow: auto;
+.invisible{
+    visibility: hidden;
 }
 

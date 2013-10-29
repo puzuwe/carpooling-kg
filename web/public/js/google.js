@@ -9,14 +9,13 @@ function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
 
     var mapOptions = {
-        center: new google.maps.LatLng(-33.8688, 151.2195),
+        center: new google.maps.LatLng(42.8747, 74.6122),
         zoom: 7,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
     directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
     var inputFrom = document.getElementById('podorozhniki_mainbundle_ride_departure');
     var inputTo = document.getElementById('podorozhniki_mainbundle_ride_destination');
