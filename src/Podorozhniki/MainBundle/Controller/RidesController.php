@@ -25,7 +25,6 @@ class RidesController extends FOSRestController
             return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRides.html.twig",array("rides"=>$user->getRides())));
         }
     }
-
     public function getRideAction($userId, $id)
     {
         $ride = $this->getDoctrine()->getRepository("PodorozhnikiMainBundle:Ride")->find($id);
@@ -37,13 +36,18 @@ class RidesController extends FOSRestController
         $ride = new Ride();
         $form = $this->createForm(new RideType(),$ride);
         $form->handleRequest($request);
-        if($form->isValid()){
+
+        //if($form->isValid()){
+
             //$user = $this->getDoctrine()->getRepository("ApplicationSonataUserBundle:User")->find($userId);
             //$form->get('user')->setData($user);
             $em = $this->getDoctrine()->getManager();
             $em->persist($ride);
-        }
-        return new Response("PodorozhnikiMainBundle:Rides:postRides.html.twig",array("form"=>$form->createView()));
+            $em->flush();
+
+           return $this->redirect($this->generateUrl("podorozhniki_main_homepage"));
+       // }
+        //return new Response("PodorozhnikiMainBundle:Rides:postRides.html.twig",array("form"=>$form->createView()));
 
     }
 

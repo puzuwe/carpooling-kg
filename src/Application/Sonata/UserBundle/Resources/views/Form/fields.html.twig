@@ -2,11 +2,16 @@
 {% block form_row %}
     {% spaceless %}
         <div class="form-group">
-            {{ form_label(form) }}
             <div class="col-md-4">
+            {{ form_label(form) }}
                 {{ form_errors(form) }}
+            </div>
+
+            <div class="col-md-8">
+
                 {{ form_widget(form) }}
             </div>
+
         </div>
         {% endspaceless %}
 {% endblock %}
@@ -31,7 +36,7 @@
             {% if label is empty %}
                 {% set label = name|humanize %}
             {% endif %}
-            <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class="col-md-2 control-label">{{ label|trans({}, translation_domain) }}</label>
+            <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class="control-label">{{ label|trans({}, translation_domain) }}</label>
         {% endif %}
     {% endspaceless %}
 {% endblock form_label %}
@@ -56,7 +61,7 @@
     {% spaceless %}
 
         <div class="form-group">
-        <div class="col-md-offset-2 col-md-4">
+        <div class="col-md-offset-4 col-md-8">
             {{ form_widget(form,{'attr':{'class':'btn btn-primary btn-block'}}) }}
         </div>
         </div>

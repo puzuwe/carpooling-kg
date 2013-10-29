@@ -2,5 +2,13 @@
 
 {% block body %}
    {% form_theme form 'ApplicationSonataUserBundle:Form:fields.html.twig' %}
-    {{ form(form,{'attr':{'class':'form-horizontal'}}) }}
+    <div class="row">
+        <div class="col-md-6">
+            {{ form(form,{'attr':{'class':'form-horizontal'}}) }}
+        </div>
+
+    <div class="col-md-6">
+        <div id="map-canvas"></div>
+    </div>
+    </div>
 {% endblock %}
