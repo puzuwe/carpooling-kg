@@ -49,14 +49,13 @@ class RidesController extends FOSRestController
 
     public function newRideAction($userId)
     {
-        if ($userId == $this->getUser()->getId()) {
+        if (is_object($this->getUser()) && $userId == $this->getUser()->getId()) {
             $ride = new Ride();
             $form = $this->createForm(new RideType($this->getUser()), $ride, array('action' => $this->generateUrl('post_user_ride', array('userId' => $userId)), 'method' => 'post'));
             return $this->render("PodorozhnikiMainBundle:Rides:newRide.html.twig", array("form" => $form->createView()));
+        } else {
+            return $this->redirect($this->generateUrl("podorozhniki_main_homepage"));
         }
-        else{
-            return $this->redirect($this->generateUrl("podorozhniki_main_homepage"),302);
-                    }
 
     }
 

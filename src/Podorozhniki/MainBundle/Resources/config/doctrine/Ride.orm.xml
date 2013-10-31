@@ -12,7 +12,9 @@
     <field name="oneseatcost" type="decimal" column="oneSeatCost" nullable="false"/>
     <field name="returndate" type="datetime" column="returnDate" nullable="false"/>
     <field name="returnanytime" type="boolean" column="returnAnyTime" nullable="true"/>
-      <many-to-one target-entity="Who" field="who" inversed-by="rides" />
+      <many-to-one target-entity="Who" field="who" inversed-by="rides">
+          <join-column name="who_id" referenced-column-name="id" nullable="false"/>
+      </many-to-one>
       <many-to-one target-entity="\Application\Sonata\UserBundle\Entity\User" field="user"/>
   </entity>
 </doctrine-mapping>
