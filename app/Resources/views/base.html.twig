@@ -27,7 +27,7 @@
                 {{ knp_menu_render("PodorozhnikiMainBundle:Builder:userMenu") }}
             </div>
             <div class="col-md-2">
-                <a class=" btn btn-info btn-block" href="{{ path('new_user_ride',{'userId':1}) }}">{{ 'ride.addNew'|trans() }}</a>
+                <a class=" btn btn-info btn-block" href="{{ path('new_user_ride',{'userId':app.user.id}) }}">{{ 'ride.addNew'|trans() }}</a>
             </div>
         </div>
     </div>

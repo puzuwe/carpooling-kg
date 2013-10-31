@@ -7,7 +7,7 @@ Feature: Authorization
   Scenario: Sucessfully Authenticate
     Given I am on "admin/login"
     When I fill in "_username" with "admin"
-    And  I fill in "password" with "password"
+    And  I fill in "password" with "admin"
     And I press "_submit"
     Then I should be on "/admin/dashboard"
     And I should see "Logout"
