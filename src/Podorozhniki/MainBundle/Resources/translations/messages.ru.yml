@@ -22,14 +22,17 @@ user:
       calendar:   Календарь
       search:     Поиск
 ride:
-    departure:        От
-    destination:      До
-    departureTime:    Отправление
-    departureAnyTime: Любое время
-    numberOfSeats:    Количество мест
-    oneSeatCost:      Стоимость 1-го места
-    returnDate:       Обратно
-    returnAnyTime:    Любое время
-    addNew:           Добавить новый маршрут
-main:
-        homePage: На главную
+    Addnew:       Добавить новый маршрут
+Who:              Я
+Departure:        От
+Destination:      До
+Departuretime:    Отправление
+Departureanytime: Любое время
+Numberofseats:    Количество мест
+Oneseatcost:      Стоимость 1-го места
+Returndate:       Обратно
+Returnanytime:    Любое время
+Addnew:           Добавить новый маршрут
+Driver:           Водитель
+Passenger:        Пассажир
+Add:              Добавить

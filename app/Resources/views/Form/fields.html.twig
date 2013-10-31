@@ -30,17 +30,20 @@
             {% if not compound %}
                 {% set label_attr = label_attr|merge({'for': id}) %}
             {% endif %}
-            {#{% if required %}#}
-                {#{% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}#}
-            {#{% endif %}#}
+            {% if required %}
+                {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+            {% endif %}
             {% if label is empty %}
                 {% set label = name|humanize %}
             {% endif %}
-            <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class="control-label">{{ label|trans({}, translation_domain) }}</label>
+        {% if label =="Driver" or label == "Passenger"%}
+            {{ label|trans({},translation_domain) }}
+        {% else %}
+            <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
+            {% endif %}
         {% endif %}
     {% endspaceless %}
 {% endblock form_label %}
-
 
 {% block form_errors %}
 
@@ -112,3 +115,21 @@
         </select>
     {% endspaceless %}
 {% endblock choice_widget_collapsed %}
+
+{% block radio_widget %}
+    {% spaceless %}
+        <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+    {% endspaceless %}
+{% endblock radio_widget %}
+
+{% block choice_widget_expanded %}
+    {% spaceless %}
+        <div {{ block('widget_container_attributes') }}>
+            {% for child in form %}
+            <label class="btn btn-primary">
+                {{ form_widget(child) }} {{ form_label(child) }}
+            </label>
+            {% endfor %}
+        </div>
+    {% endspaceless %}
+{% endblock choice_widget_expanded %}

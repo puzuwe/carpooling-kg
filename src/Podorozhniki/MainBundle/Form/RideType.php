@@ -25,7 +25,7 @@ class RideType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('who')
+            ->add('who',null,array('multiple'=>false,'expanded'=>true,'attr'=>array('data-toggle'=>"buttons","class"=>"btn-group")))
             ->add('departure', null, array('attr' => array('autocomplete' => 'on')))
             ->add('destination', null, array('attr' => array('autocomplete' => 'on', 'onblur' => 'calcRoute()')))
             ->add('departuretime', 'datetime', array('input' => 'datetime', 'widget' => 'single_text'))

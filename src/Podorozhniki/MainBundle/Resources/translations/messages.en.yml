@@ -22,14 +22,17 @@ user:
         calendar: Calendar
         search: Search
 ride:
-    departure:  From
-    destination:  To
-    departureTime:  Departure time
-    departureAnyTime: Any time
-    numberOfSeats:  Number of seats
-    oneSeatCost:  One seat cost
-    returnDate: Return date
-    returnAnyTime:  Any time
-    addNew: Add new ride
-main:
-    homePage: Home
+    Addnew:       Add new ride
+
+Who:              I am
+Departure:        From
+Destination:      To
+Departuretime:    Departure time
+Departureanytime: Any time
+Numberofseats:    Number of seats
+Oneseatcost:      One seat cost
+Returndate:       Return date
+Returnanytime:    Any time
+Driver:           Driver
+Passenger:        Passenger
+Add:              Add

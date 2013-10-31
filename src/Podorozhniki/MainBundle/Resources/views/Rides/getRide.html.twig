@@ -2,39 +2,39 @@
     <table class="record_properties">
         <tbody>
         <tr>
-            <th>{{ ride.who.name }}</th>
+            <th>{{ ride.who.name|trans }}</th>
             <td>{{ ride.user.firstname }}</td>
         </tr>
         <tr>
-            <th>{{ 'ride.departure'|trans }}</th>
+            <th>{{ 'Departure'|trans }}</th>
             <td>{{ ride.departure }}</td>
         </tr>
         <tr>
-            <th>{{ 'ride.destination'|trans }}</th>
+            <th>{{ 'Destination'|trans }}</th>
             <td>{{ ride.destination }}</td>
         </tr>
         <tr>
-            <th>{{ 'ride.departureTime'|trans }}</th>
+            <th>{{ 'Departuretime'|trans }}</th>
             <td>{{ ride.departuretime|date('Y-m-d H:i:s') }}</td>
         </tr>
         <tr>
-            <th>{{ 'ride.departureAnyTime'|trans }}</th>
+            <th>{{ 'Departureanytime'|trans }}</th>
             <td>{{ ride.departureanytime }}</td>
         </tr>
         <tr>
-            <th>{{ 'ride.numberOfSeats'|trans }}</th>
+            <th>{{ 'Numberofseats'|trans }}</th>
             <td>{{ ride.numberofseats }}</td>
         </tr>
         <tr>
-            <th>{{ 'ride.oneSeatCost'|trans }}</th>
+            <th>{{ 'Oneseatcost'|trans }}</th>
             <td>{{ ride.oneseatcost }}</td>
         </tr>
         <tr>
-            <th>{{ 'ride.returnDate'|trans }}</th>
+            <th>{{ 'Returndate'|trans }}</th>
             <td>{{ ride.returndate|date('Y-m-d H:i:s') }}</td>
         </tr>
         <tr>
-            <th>{{ 'ride.returnAnyTime'|trans }}</th>
+            <th>{{ 'Returnanytime'|trans }}</th>
             <td>{{ ride.returnanytime }}</td>
         </tr>
         </tbody>
