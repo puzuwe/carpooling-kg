@@ -1,8 +1,11 @@
 routes:
-    routes: Маршруты
-    all:  Все маршруты
-    nearest:  Ближайшие маршруты
-    popular:  Популярные маршруты
+    routes:       Маршруты
+    all:          Все маршруты
+    nearest:      Ближайшие маршруты
+    popular:      Популярные маршруты
+    add:          Добавить новый маршрут
+    all:          Все маршруты
+    my:           Мои маршруты
 events:
     events: События
     all:  Все события
@@ -14,25 +17,25 @@ places:
     all:  Все общественные места
     addedByMe:  Добавленные мной общ. места
     addPublic: Добавить общественное место
-user:
-    menu:
-      my:
-        rides:    Мои Маршруты
-        messages:   Мои сообщения
-      calendar:   Календарь
-      search:     Поиск
-ride:
-    Addnew:       Добавить новый маршрут
+
+messages:
+       my:        Мои сообщения
+calendar:         Календарь
+search:           Поиск
 Who:              Я
+Firstname:        Имя
 Departure:        От
 Destination:      До
 Departuretime:    Отправление
 Departureanytime: Любое время
 Numberofseats:    Количество мест
 Oneseatcost:      Стоимость 1-го места
+Currency:         Валюта
 Returndate:       Обратно
 Returnanytime:    Любое время
 Addnew:           Добавить новый маршрут
 Driver:           Водитель
 Passenger:        Пассажир
+Seatsleft:        Осталось мест
 Add:              Добавить
+at:               в

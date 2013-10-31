@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     <link rel="stylesheet" href="{{ asset('public/bootstrap-3.0.0/css/bootstrap.min.css') }}" media="screen">
     <link rel="stylesheet" href="{{ asset('public/bootstrap-3.0.0/css/bootstrap-datetimepicker.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('public/bootstrap-3.0.0/css/glyphicons-free.css') }}"/>
     <link rel="stylesheet" href="{{ asset('public/css/normalize.css') }}"/>
     <link rel="stylesheet" href="{{ asset('public/css/main.css') }}"/>
 
@@ -27,7 +28,7 @@
                 {{ knp_menu_render("PodorozhnikiMainBundle:Builder:userMenu") }}
             </div>
             <div class="col-md-2">
-                <a class=" btn btn-info btn-block" href="{{ path('new_user_ride',{'userId':app.user.id}) }}">{{ 'ride.Addnew'|trans() }}</a>
+                <a class=" btn btn-info btn-block" href="{{ path('new_user_ride',{'userId':app.user.id}) }}">{{ 'routes.add'|trans() }}</a>
             </div>
         </div>
     </div>

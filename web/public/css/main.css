@@ -10,4 +10,6 @@
 .invisible{
     visibility: hidden;
 }
-
+.cursor:hover{
+    cursor: pointer;
+}

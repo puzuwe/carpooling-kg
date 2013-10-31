@@ -304,4 +304,32 @@ class Ride
     {
         return $this->user;
     }
+    /**
+     * @var \Podorozhniki\MainBundle\Entity\Currency
+     */
+    private $currency;
+
+
+    /**
+     * Set currency
+     *
+     * @param \Podorozhniki\MainBundle\Entity\Currency $currency
+     * @return Ride
+     */
+    public function setCurrency(\Podorozhniki\MainBundle\Entity\Currency $currency)
+    {
+        $this->currency = $currency;
+    
+        return $this;
+    }
+
+    /**
+     * Get currency
+     *
+     * @return \Podorozhniki\MainBundle\Entity\Currency 
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
 }

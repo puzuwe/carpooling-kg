@@ -31,10 +31,11 @@ class RideType extends AbstractType
             ->add('departuretime', 'datetime', array('input' => 'datetime', 'widget' => 'single_text'))
             ->add('departureanytime')
             ->add('numberofseats')
+
+            ->add('currency')
             ->add('oneseatcost')
             ->add('returndate', 'datetime', array('input' => 'datetime', 'widget' => 'single_text'))
             ->add('returnanytime')
-            //->add('user','hidden',array('data'=>$this->user))
             ->add('user', 'entity', array('class' => 'ApplicationSonataUserBundle:User', 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('u')->where('u.id=:id')->setParameter('id', $this->user->getId());
                 }, 'attr' => array('class' => 'invisible'), 'label_attr' => array('class' => 'invisible')))

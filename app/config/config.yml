@@ -87,3 +87,9 @@ fos_rest:
     routing_loader:
         include_format: false
         default_format: html
+
+services:
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }

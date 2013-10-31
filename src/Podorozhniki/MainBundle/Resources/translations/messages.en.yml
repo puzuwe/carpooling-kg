@@ -1,8 +1,10 @@
 routes:
-    routes: Ride
-    all:  All rides
-    nearest:  Nearest rides
-    popular:  Popular rides
+    routes:       Ride
+    all:          All rides
+    nearest:      Nearest rides
+    popular:      Popular rides
+    add:          Add new ride
+    my:           My routes
 events:
     events: Events
     all:  All events
@@ -14,25 +16,24 @@ places:
     all:  All places
     addedByMe:  Added by me
     addPublic: Add public place
-user:
-    menu:
-        my:
-            rides:  Dashboard
-            messages: My messages
-        calendar: Calendar
-        search: Search
-ride:
-    Addnew:       Add new ride
 
+messages:
+     my:          My messages
+calendar:         Calendar
+search:           Search
 Who:              I am
+Firstname:        Firstmainname
 Departure:        From
 Destination:      To
 Departuretime:    Departure time
 Departureanytime: Any time
 Numberofseats:    Number of seats
 Oneseatcost:      One seat cost
+Currency:         Currency
 Returndate:       Return date
 Returnanytime:    Any time
 Driver:           Driver
 Passenger:        Passenger
+Seatsleft:        Seats left
 Add:              Add
+at:               at
