@@ -12,13 +12,13 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 {{ knp_menu_render('PodorozhnikiMainBundle:Builder:topMenu') }}
                 <ul class="nav navbar-nav navbar-right">
+                    <li>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li class="dropdown">
                         <a data-toggle="dropdown" href="#" role="button">
                             {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
                             <b class="caret"></b>
                         </a>
-                     </li>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel1">
 
                             <li role="presentation">
