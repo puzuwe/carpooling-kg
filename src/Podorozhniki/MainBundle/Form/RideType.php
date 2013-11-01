@@ -32,7 +32,7 @@ class RideType extends AbstractType
             ->add('departureanytime')
             ->add('numberofseats')
 
-            ->add('currency')
+            ->add('currency',null,array('multiple'=>false,'expanded'=>true,'attr'=>array('data-toggle'=>"buttons","class"=>"btn-group")))
             ->add('oneseatcost')
             ->add('returndate', 'datetime', array('input' => 'datetime', 'widget' => 'single_text'))
             ->add('returnanytime')
