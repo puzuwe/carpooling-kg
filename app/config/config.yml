@@ -82,6 +82,9 @@ fos_user:
     registration:
         confirmation:
             enabled:  true
+        form:
+            type: sonata_user_registration
+
 
 fos_rest:
     routing_loader:
@@ -93,6 +96,11 @@ services:
         class: Twig_Extensions_Extension_Intl
         tags:
             - { name: twig.extension }
+    sonata_user.registration.form.type:
+        class: Application\Sonata\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: sonata_user_registration }
 
 knp_paginator:
     page_range: 5                      # default page range used in pagination control

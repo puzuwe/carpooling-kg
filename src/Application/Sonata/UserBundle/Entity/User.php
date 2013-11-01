@@ -84,4 +84,10 @@ class User extends BaseUser
     {
         return $this->rides;
     }
+
+    public function setEmail($email)
+    {
+        parent::setEmail($email);
+        $this->setUsername($email);
+    }
 }
