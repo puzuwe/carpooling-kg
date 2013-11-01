@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             //Sonata Project
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new \Sonata\AdminBundle\SonataAdminBundle(),
             new \Sonata\BlockBundle\SonataBlockBundle(),
             new \Sonata\CacheBundle\SonataCacheBundle(),
@@ -33,6 +34,7 @@ class AppKernel extends Kernel
             new \JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new Podorozhniki\MainBundle\PodorozhnikiMainBundle(),
+            new Application\FOS\KnpPaginatorBundle\ApplicationFOSKnpPaginatorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

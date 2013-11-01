@@ -22,7 +22,7 @@ messages:
 calendar:         Calendar
 search:           Search
 Who:              I am
-Firstname:        Firstmainname
+Firstname:        Firstname
 Departure:        From
 Destination:      To
 Departuretime:    Departure time
