@@ -43,6 +43,7 @@
 <!-- BODY -->
     <div class="container" id="main">
 
+        <!-- Menu shown when user is authenticated. -->
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <div class="container">
                 <div class="row">
@@ -56,8 +57,8 @@
                 </div>
             </div>
         {% endif %}
+        {{ render(controller('ApplicationSonataUserBundle:Security:loginModal')) }}
         {% block body %}
-
         {% endblock %}
     </div>
 
