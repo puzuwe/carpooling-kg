@@ -51,7 +51,7 @@ class User extends BaseUser
         parent::__construct();
         $this->rides = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Add rides
      *
@@ -61,7 +61,7 @@ class User extends BaseUser
     public function addRide(\Podorozhniki\MainBundle\Entity\Ride $rides)
     {
         $this->rides[] = $rides;
-    
+
         return $this;
     }
 
@@ -78,7 +78,7 @@ class User extends BaseUser
     /**
      * Get rides
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getRides()
     {
@@ -89,5 +89,72 @@ class User extends BaseUser
     {
         parent::setEmail($email);
         $this->setUsername($email);
+    }
+
+
+
+    protected $facebookUid;
+
+    public function serialize()
+    {
+        return serialize(array($this->facebookUid, parent::serialize()));
+    }
+
+    public function unserialize($data)
+    {
+        list($this->facebookUid, $parentData) = unserialize($data);
+        parent::unserialize($parentData);
+    }
+
+
+    /**
+     * Get the full name of the user (first + last name)
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->getFirstname() . ' ' . $this->getLastname();
+    }
+
+    /**
+     * @param string $facebookUid
+     * @return void
+     */
+    public function setFacebookUid($facebookUid)
+    {
+        $this->facebookUid = $facebookUid;
+        $this->setUsername($facebookUid);
+    }
+
+    /**
+     * @return string
+     */
+    public function getFacebookUid()
+    {
+        return $this->facebookUid;
+    }
+
+    /**
+     * @param Array
+     */
+    public function setFBData($fbdata)
+    {
+        if (isset($fbdata['id'])) {
+            $this->setFacebookUid($fbdata['id']);
+            $this->addRole('ROLE_FACEBOOK');
+        }
+        if (isset($fbdata['first_name'])) {
+            $this->setFirstname($fbdata['first_name']);
+        }
+        if (isset($fbdata['last_name'])) {
+            $this->setLastname($fbdata['last_name']);
+        }
+        if (isset($fbdata['email'])) {
+            $this->setEmail($fbdata['email']);
+        }
+        if(isset($fbdata['birthday'])){
+
+            $this->setDateOfBirth(new \DateTime($fbdata['birthday']));
+        }
     }
 }

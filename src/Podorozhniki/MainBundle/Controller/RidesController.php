@@ -20,15 +20,13 @@ class RidesController extends FOSRestController
 
 
         if ($userId == 0) {
-            $dql = "SELECT r from PodorozhnikiMainBundle:Ride r";
-            $query = $em->createQuery($dql);
-            $rides = $paginator->paginate($query,$this->get('request')->query->get('page',1),5);
+            $query = $em->createQuery("SELECT r from PodorozhnikiMainBundle:Ride r");
+            $rides = $paginator->paginate($query,$this->getRequest()->query->get('page',1),5);
             return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRides.html.twig", array("rides" => $rides)));
         } else {
-            $dql = "SELECT r from PodorozhnikiMainBundle:Ride r where r.user.id= $userId";
-            $query = $em->createQuery($dql);
-            $user = $paginator->paginate($query,$this->get('request')->query->get('page',1),5);
-            return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRides.html.twig", array("rides" => $user->getRides())));
+            $query = $em->createQuery("select r from PodorozhnikiMainBundle:Ride r where r.user = :usert")->setParameter("usert",$this->getUser());
+            $rides = $paginator->paginate($query,$this->getRequest()->query->get('page',1),5);
+            return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRides.html.twig", array("rides" => $rides)));
         }
     }
 

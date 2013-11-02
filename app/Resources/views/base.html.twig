@@ -20,11 +20,30 @@
     <![endif]-->
 </head>
 <body>
+<script type="text/javascript">
+
+    var authurl = '{{ path('_security_check_facebook') }}';
+
+    function goLogIn(){
+        window.location = authurl;
+    }
+
+    function onFbInit() {
+        if (typeof(FB) != 'undefined' && FB != null ) {
+            FB.Event.subscribe('auth.statusChange', function(response) {
+                setTimeout(goLogIn, 500);
+            });
+        }
+    }
+
+</script>
+{{ facebook_initialize({'xfbml': true, 'fbAsyncInit': 'onFbInit();'}) }}
 <!-- HEADER -->
 {{ include('_header.html.twig') }}
 <!-- BODY -->
     <div class="container" id="main">
 
+        <!-- Menu shown when user is authenticated. -->
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <div class="container">
                 <div class="row">
@@ -38,7 +57,9 @@
                 </div>
             </div>
         {% endif %}
-        {% block body %}{% endblock %}
+        {{ render(controller('ApplicationSonataUserBundle:Security:loginModal')) }}
+        {% block body %}
+        {% endblock %}
     </div>
 
 <!-- FOOTER -->
