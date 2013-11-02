@@ -20,6 +20,24 @@
     <![endif]-->
 </head>
 <body>
+<script type="text/javascript">
+
+    var authurl = '{{ path('_security_check_facebook') }}';
+
+    function goLogIn(){
+        window.location = authurl;
+    }
+
+    function onFbInit() {
+        if (typeof(FB) != 'undefined' && FB != null ) {
+            FB.Event.subscribe('auth.statusChange', function(response) {
+                setTimeout(goLogIn, 500);
+            });
+        }
+    }
+
+</script>
+{{ facebook_initialize({'xfbml': true, 'fbAsyncInit': 'onFbInit();'}) }}
 <!-- HEADER -->
 {{ include('_header.html.twig') }}
 <!-- BODY -->
@@ -38,7 +56,9 @@
                 </div>
             </div>
         {% endif %}
-        {% block body %}{% endblock %}
+        {% block body %}
+
+        {% endblock %}
     </div>
 
 <!-- FOOTER -->

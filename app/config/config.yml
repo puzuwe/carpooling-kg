@@ -101,6 +101,12 @@ services:
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: sonata_user_registration }
+    fos_facebook.user.login:
+        class: Application\Sonata\UserBundle\Security\User\Provider\FacebookProvider
+        arguments:
+            facebook: "@fos_facebook.api"
+            userManager: "@fos_user.user_manager"
+            validator: "@validator"
 
 knp_paginator:
     page_range: 5                      # default page range used in pagination control
@@ -112,3 +118,10 @@ knp_paginator:
     template:
         pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_pagination.html.twig     # sliding pagination controls template
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+
+fos_facebook:
+    alias:  facebook
+    app_id: 1425391484340719
+    secret: 70b56308d2a69194091acc847a123991
+    cookie: true
+    permissions: [email, user_hometown, user_location]

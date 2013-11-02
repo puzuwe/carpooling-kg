@@ -35,6 +35,7 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new Podorozhniki\MainBundle\PodorozhnikiMainBundle(),
             new Application\FOS\KnpPaginatorBundle\ApplicationFOSKnpPaginatorBundle(),
+            new FOS\FacebookBundle\FOSFacebookBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

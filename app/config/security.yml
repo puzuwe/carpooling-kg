@@ -6,8 +6,13 @@ security:
             - ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT  # if you are using acl then this line must be commented
 
     providers:
+        chain_provider:
+            chain:
+                providers:  [fos_userbundle, fos_facebook_provider]
         fos_userbundle:
-            id: fos_user.user_provider.username_email
+            id: fos_user.user_provider.username
+        fos_facebook_provider:
+            id: fos_facebook.user.login
 
     firewalls:
         # Disabling the security for the web debug toolbar, the profiler and Assetic.
@@ -39,9 +44,17 @@ security:
         # This part is handled by the FOS User Bundle
         main:
             pattern:             .*
-            context:             user
+            fos_facebook:
+                app_url:        "http://apps.facebook.com/nursultant/podorozhniki.kg"
+                server_url:     "http://127.0.0.1/podorozhniki.kg/web/app_dev.php/"
+                login_path:     fos_user_security_login
+                check_path:     /facebook/login_check
+                provider:       fos_facebook_provider
+                default_target_path:  /
+            context:            user
             form_login:
                 provider:       fos_userbundle
+                csrf_provider:  form.csrf_provider
                 login_path:     fos_user_security_login
                 use_forward:    false
                 check_path:     fos_user_security_check
@@ -49,10 +62,16 @@ security:
           #      default_target_path: podorozhniki_mainbundle_homepage
             logout:
                 path:           fos_user_security_logout
-            anonymous:          true
+            anonymous:          ~
+            remember_me:
+                key:            mySuperDuperKey
+                lifetime:       4147200
+                path:           /
+                domain:         ~
 
     access_control:
         # URL of FOSUserBundle which need to be available to anonymous users
+        - { path: ^/facebook/, role: [ROLE_FACEBOOK] }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
