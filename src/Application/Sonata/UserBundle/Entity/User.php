@@ -93,16 +93,16 @@ class User extends BaseUser
 
 
 
-    protected $facebookId;
+    protected $facebookUid;
 
     public function serialize()
     {
-        return serialize(array($this->facebookId, parent::serialize()));
+        return serialize(array($this->facebookUid, parent::serialize()));
     }
 
     public function unserialize($data)
     {
-        list($this->facebookId, $parentData) = unserialize($data);
+        list($this->facebookUid, $parentData) = unserialize($data);
         parent::unserialize($parentData);
     }
 
@@ -117,21 +117,21 @@ class User extends BaseUser
     }
 
     /**
-     * @param string $facebookId
+     * @param string $facebookUid
      * @return void
      */
-    public function setFacebookId($facebookId)
+    public function setFacebookUid($facebookUid)
     {
-        $this->facebookId = $facebookId;
-        $this->setUsername($facebookId);
+        $this->facebookUid = $facebookUid;
+        $this->setUsername($facebookUid);
     }
 
     /**
      * @return string
      */
-    public function getFacebookId()
+    public function getFacebookUid()
     {
-        return $this->facebookId;
+        return $this->facebookUid;
     }
 
     /**
@@ -140,7 +140,7 @@ class User extends BaseUser
     public function setFBData($fbdata)
     {
         if (isset($fbdata['id'])) {
-            $this->setFacebookId($fbdata['id']);
+            $this->setFacebookUid($fbdata['id']);
             $this->addRole('ROLE_FACEBOOK');
         }
         if (isset($fbdata['first_name'])) {
@@ -151,6 +151,10 @@ class User extends BaseUser
         }
         if (isset($fbdata['email'])) {
             $this->setEmail($fbdata['email']);
+        }
+        if(isset($fbdata['birthday'])){
+
+            $this->setDateOfBirth(new \DateTime($fbdata['birthday']));
         }
     }
 }

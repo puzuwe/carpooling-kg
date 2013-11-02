@@ -124,4 +124,4 @@ fos_facebook:
     app_id: 1425391484340719
     secret: 70b56308d2a69194091acc847a123991
     cookie: true
-    permissions: [email, user_hometown, user_location]
+    permissions: [email, user_hometown, user_location,user_birthday]
