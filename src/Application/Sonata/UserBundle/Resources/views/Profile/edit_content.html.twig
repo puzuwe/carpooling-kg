@@ -1,6 +1,69 @@
-<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />
-    </div>
-</form>
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+<div class="sonata-user-edit-profile">
+
+    <h2>{{ 'title_user_account'| trans({}, 'SonataUserBundle') }}
+        - {{ 'title_user_edit_profile'| trans({}, 'SonataUserBundle') }}</h2>
+    {% form_theme form ":Form:fields.html.twig" %}
+
+    <form action="{{ path('sonata_user_profile_edit') }}" method="POST" class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-4">
+                {{ form_label(form.gender, 'form.label_gender'| trans({}, 'SonataUserBundle')) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.gender) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+
+                {{ form_label(form.firstname, 'form.label_firstname'| trans({}, 'SonataUserBundle')) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.firstname) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                {{ form_label(form.lastname, 'form.label_lastname'| trans({}, 'SonataUserBundle')) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.lastname) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                {{ form_label(form.dateOfBirth, 'form.label_date_of_birth'| trans({}, 'SonataUserBundle')) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.dateOfBirth) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                {{ form_label(form.phone, 'form.label_phone'|trans({},'SonataUserBundle')) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.phone) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8">
+                {#{{ form_widget(form,{'attr':{'class':'btn btn-primary btn-block'}}) }}#}
+                <input class="btn btn-primary" type="submit" name = "{{ 'sonata_user_submit'|trans({}, 'SonataUserBundle') }}"/>
+            </div>
+        </div>
+
+    </form>
+</div>
