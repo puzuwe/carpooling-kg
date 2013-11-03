@@ -1,9 +1,9 @@
+@javascript
 Feature: User Rides CRUD
   In order to add new ride
   As a User
   I should be able to see ride CRUD pages.
 
-  @javascript
   Scenario: Add new Ride
     Given I am on "/en/login"
     Then I fill in "username" with "admin"
