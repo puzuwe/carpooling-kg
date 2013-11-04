@@ -90,3 +90,11 @@ user_couple_fb_with_account:
 
 facebook:
     resource: "@FOSFacebookBundle/Resources/config/routing.xml"
+
+podorozhniki_rides_rest:
+    type: rest
+    resource: Podorozhniki\MainBundle\Controller\RidesController
+    prefix: /{_locale}
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale:  en|tr|ru

@@ -5,4 +5,4 @@ users:
 rides:
     type:         rest
     parent:       users
-    resource:     Podorozhniki\MainBundle\Controller\RidesController
+    resource:     Podorozhniki\MainBundle\Controller\UserRidesController

@@ -16,14 +16,7 @@ file that was distributed with this source code.
     {% form_theme form ":Form:fields.html.twig" %}
 
     <form action="{{ path('sonata_user_profile_edit') }}" method="POST" class="form-horizontal">
-        <div class="form-group">
-            <div class="col-md-4">
-                {{ form_label(form.gender, 'form.label_gender'| trans({}, 'SonataUserBundle')) }}
-            </div>
-            <div class="col-md-8">
-                {{ form_widget(form.gender) }}
-            </div>
-        </div>
+
         <div class="form-group">
             <div class="col-md-4">
 
@@ -39,6 +32,14 @@ file that was distributed with this source code.
             </div>
             <div class="col-md-8">
                 {{ form_widget(form.lastname) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                {{ form_label(form.gender, 'form.label_gender'| trans({}, 'SonataUserBundle')) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.gender) }}
             </div>
         </div>
         <div class="form-group">
@@ -61,7 +62,7 @@ file that was distributed with this source code.
         <div class="form-group">
             <div class="col-md-offset-4 col-md-8">
                 {#{{ form_widget(form,{'attr':{'class':'btn btn-primary btn-block'}}) }}#}
-                <input class="btn btn-primary" type="submit" name = "{{ 'sonata_user_submit'|trans({}, 'SonataUserBundle') }}"/>
+                <input class="btn btn-primary" type="submit" value= "{{ 'sonata_user_submit'|trans({}, 'SonataUserBundle') }}"/>
             </div>
         </div>
 

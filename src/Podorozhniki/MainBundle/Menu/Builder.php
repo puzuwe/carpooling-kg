@@ -32,7 +32,7 @@ class Builder extends  ContainerAware{
         //$menu->addChild($translator->trans('main.homePage'),$menu_attributes);
         $routes = $menu->addChild($translator->trans('routes.routes'),$menu_attributes);
 
-        $routes->addChild($translator->trans('routes.all'),array('route'=>'get_user_rides','routeParameters'=>array('userId'=>0)));
+        $routes->addChild($translator->trans('routes.all'),array('route'=>'get_rides'));
         $routes->addChild($translator->trans('routes.nearest'),array('uri'=>'/'));
         $routes->addChild($translator->trans('routes.popular'),array('uri'=>'/'));
 
@@ -46,6 +46,7 @@ class Builder extends  ContainerAware{
         $places->addChild($translator->trans('places.all'),array('uri'=>'/'));
         $places->addChild($translator->trans('places.addedByMe'),array('uri'=>'/'));
         $places->addChild($translator->trans('places.addPublic'),array('uri'=>'/'));
+        $menu->addChild($translator->trans("search"),array('uri'=>'/'));
         return $menu;
     }
 
@@ -58,7 +59,7 @@ class Builder extends  ContainerAware{
         $menu->addChild($translator->trans("routes.my"),array('route'=>'get_user_rides','routeParameters'=>array('userId'=>$user->getId())));
         $menu->addChild($translator->trans("messages.my"),array("uri"=>"/"));
         $menu->addChild($translator->trans("calendar"),array("uri"=>"/"));
-        $menu->addChild($translator->trans("search"),array("uri"=>"/"));
+        //$menu->addChild($translator->trans("search"),array("uri"=>"/"));
         return $menu;
     }
 

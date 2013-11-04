@@ -1,67 +1,30 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Almaz
+ * Date: 04.11.13
+ * Time: 11:32
+ */
 
 namespace Podorozhniki\MainBundle\Controller;
 
+
 use FOS\RestBundle\Controller\FOSRestController;
-use Podorozhniki\MainBundle\Entity\Ride;
-use Podorozhniki\MainBundle\Form\RideType;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class RidesController extends FOSRestController
 {
 
-    public function getRidesAction($userId)
+    public function getRidesAction()
     {
-        $em = $this->get('doctrine.orm.entity_manager');
-        $dql = null;
-
-        $paginator = $this->get('knp_paginator');
-
-
-        if ($userId == 0) {
-            $query = $em->createQuery("SELECT r from PodorozhnikiMainBundle:Ride r");
-            $rides = $paginator->paginate($query,$this->getRequest()->query->get('page',1),5);
-            return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRides.html.twig", array("rides" => $rides)));
-        } else {
-            $query = $em->createQuery("select r from PodorozhnikiMainBundle:Ride r where r.user = :usert")->setParameter("usert",$this->getUser());
-            $rides = $paginator->paginate($query,$this->getRequest()->query->get('page',1),5);
-            return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRides.html.twig", array("rides" => $rides)));
-        }
+       $paginator = $this->get("knp_paginator");
+       $rides = $this->getDoctrine()->getRepository("PodorozhnikiMainBundle:Ride")->PaginateFindAll($paginator,$this->getRequest(),5);
+        return $this->render("PodorozhnikiMainBundle:Rides:getRides.html.twig",array('rides'=>$rides));
     }
 
-    public function getRideAction($userId, $id)
+    public function getRideAction($id)
     {
-        $ride = $this->getDoctrine()->getRepository("PodorozhnikiMainBundle:Ride")->find($id);
-        return new Response($this->renderView("PodorozhnikiMainBundle:Rides:getRide.html.twig", array("ride" => $ride)));
+        $em = $this->getDoctrine()->getManager();
+        $ride = $em->getRepository("PodorozhnikiMainBundle:Ride")->find($id);
+        return $this->render("PodorozhnikiMainBundle:Rides:getRide.html.twig",array("ride"=>$ride));
     }
-
-    public function postRideAction($userId, Request $request)
-    {
-        $ride = new Ride();
-        $form = $this->createForm(new RideType($this->getUser()), $ride);
-        $form->handleRequest($request);
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($ride);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl("podorozhniki_main_homepage"));
-        }
-        return new Response("PodorozhnikiMainBundle:Rides:postRides.html.twig", array("form" => $form->createView()));
-
-    }
-
-    public function newRideAction($userId)
-    {
-        if (is_object($this->getUser()) && $userId == $this->getUser()->getId()) {
-            $ride = new Ride();
-            $form = $this->createForm(new RideType($this->getUser()), $ride, array('action' => $this->generateUrl('post_user_ride', array('userId' => $userId)), 'method' => 'post'));
-            return $this->render("PodorozhnikiMainBundle:Rides:newRide.html.twig", array("form" => $form->createView()));
-        } else {
-            return $this->redirect($this->generateUrl("podorozhniki_main_homepage"));
-        }
-
-    }
-
-}
+} 

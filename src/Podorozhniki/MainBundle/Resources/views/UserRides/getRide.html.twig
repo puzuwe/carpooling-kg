@@ -1,0 +1,42 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<div class="col-lg-4 col-sm-6">
+    <table class="record_properties">
+        <tbody>
+        <tr>
+            <th>{{ ride.who.name|trans }}</th>
+            <td>{{ ride.user.firstname }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Departure'|trans }}</th>
+            <td>{{ ride.departure }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Destination'|trans }}</th>
+            <td>{{ ride.destination }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Departuretime'|trans }}</th>
+            <td>{{ ride.departuretime|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Departureanytime'|trans }}</th>
+            <td>{{ ride.departureanytime }}</td>
+        </tr>
+
+        <tr>
+            <th>{{ 'Oneseatcost'|trans }}</th>
+            <td>{{ ride.oneseatcost }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Returndate'|trans }}</th>
+            <td>{{ ride.returndate|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>{{ 'Returnanytime'|trans }}</th>
+            <td>{{ ride.returnanytime }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

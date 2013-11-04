@@ -21,7 +21,7 @@
         {% for ride in rides %}
 
             <tr class="cursor"
-                onclick="location.href ='{{ path('get_ride',{'id': ride.id}) }}' ">
+                onclick="location.href ='{{ path('get_user_ride',{'userId': ride.user.id,'id': ride.id}) }}' ">
                 <td>
                     <span class="glyphicon {% if ride.who|trans({},'messages','en')=='Driver' %} glyphicon-car  {% else %} glyphicon-user{% endif %}"></span>
                 </td>
