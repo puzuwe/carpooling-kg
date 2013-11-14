@@ -332,4 +332,117 @@ class Ride
     {
         return $this->currency;
     }
+
+    /**
+     * @var float
+     */
+    private $departurelatitude;
+
+    /**
+     * @var float
+     */
+    private $departurelongitude;
+
+    /**
+     * @var float
+     */
+    private $destinationlatitude;
+
+    /**
+     * @var float
+     */
+    private $destinationlongitude;
+
+
+    /**
+     * Set departurelatitude
+     *
+     * @param float $departurelatitude
+     * @return Ride
+     */
+    public function setDeparturelatitude($departurelatitude)
+    {
+        $this->departurelatitude = $departurelatitude;
+    
+        return $this;
+    }
+
+    /**
+     * Get departurelatitude
+     *
+     * @return float 
+     */
+    public function getDeparturelatitude()
+    {
+        return $this->departurelatitude;
+    }
+
+    /**
+     * Set departurelongitude
+     *
+     * @param float $departurelongitude
+     * @return Ride
+     */
+    public function setDeparturelongitude($departurelongitude)
+    {
+        $this->departurelongitude = $departurelongitude;
+    
+        return $this;
+    }
+
+    /**
+     * Get departurelongitude
+     *
+     * @return float 
+     */
+    public function getDeparturelongitude()
+    {
+        return $this->departurelongitude;
+    }
+
+    /**
+     * Set destinationlatitude
+     *
+     * @param float $destinationlatitude
+     * @return Ride
+     */
+    public function setDestinationlatitude($destinationlatitude)
+    {
+        $this->destinationlatitude = $destinationlatitude;
+    
+        return $this;
+    }
+
+    /**
+     * Get destinationlatitude
+     *
+     * @return float 
+     */
+    public function getDestinationlatitude()
+    {
+        return $this->destinationlatitude;
+    }
+
+    /**
+     * Set destinationlongitude
+     *
+     * @param float $destinationlongitude
+     * @return Ride
+     */
+    public function setDestinationlongitude($destinationlongitude)
+    {
+        $this->destinationlongitude = $destinationlongitude;
+    
+        return $this;
+    }
+
+    /**
+     * Get destinationlongitude
+     *
+     * @return float 
+     */
+    public function getDestinationlongitude()
+    {
+        return $this->destinationlongitude;
+    }
 }

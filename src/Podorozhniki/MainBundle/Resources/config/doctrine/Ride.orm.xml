@@ -9,9 +9,13 @@
     <field name="departuretime" type="datetime" column="departureTime" nullable="true"/>
     <field name="departureanytime" type="boolean" column="departureAnyTime" nullable="true"/>
     <field name="numberofseats" type="integer" column="numberOfSeats" nullable="false"/>
-    <field name="oneseatcost" type="decimal" column="oneSeatCost" nullable="false"/>
+    <field name="oneseatcost" type="decimal" precision="2" column="oneSeatCost" nullable="false"/>
     <field name="returndate" type="datetime" column="returnDate" nullable="true"/>
     <field name="returnanytime" type="boolean" column="returnAnyTime" nullable="true"/>
+      <field name="departurelatitude" type="decimal" column="departureLatitude" precision="14"/>
+      <field name="departurelongitude" type="decimal" column="departureLongitude" precision="14"/>
+      <field name="destinationlatitude" type="decimal" column="destinationLatitude" precision="14"/>
+      <field name="destinationlongitude" type="decimal" column="destinationLongitude" precision="14"/>
       <many-to-one target-entity="Who" field="who" inversed-by="rides">
           <join-column name="who_id" referenced-column-name="id" nullable="false"/>
       </many-to-one>
