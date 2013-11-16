@@ -157,4 +157,84 @@ class User extends BaseUser
             $this->setDateOfBirth(new \DateTime($fbdata['birthday']));
         }
     }
+    /**
+     * @var integer
+     */
+    private $likes;
+
+    /**
+     * @var integer
+     */
+    private $dislikes;
+
+    /**
+     * @var integer
+     */
+    private $points;
+
+    /**
+     * Set likes
+     *
+     * @param integer $likes
+     * @return User
+     */
+    public function setLikes($likes)
+    {
+        $this->likes = $likes;
+    
+        return $this;
+    }
+
+    /**
+     * Get likes
+     *
+     * @return integer 
+     */
+    public function getLikes()
+    {
+        return $this->likes;
+    }
+
+    /**
+     * Set dislikes
+     *
+     * @param integer $dislikes
+     * @return User
+     */
+    public function setDislikes($dislikes)
+    {
+        $this->dislikes = $dislikes;
+    
+        return $this;
+    }
+
+    /**
+     * Get dislikes
+     * @return integer
+     */
+    public function getDislikes()
+    {
+        return $this->dislikes;
+    }
+
+    /**
+     * Set points
+     * @param integer $points
+     * @return User
+     */
+    public function setPoints($points)
+    {
+        $this->points = $points;
+
+        return $this;
+    }
+
+    /**
+     * Get points
+     * @return integer
+     */
+    public function getPoints()
+    {
+        return $this->points;
+    }
 }

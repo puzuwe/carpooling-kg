@@ -1,42 +1,124 @@
 {% extends "::base.html.twig" %}
 {% block body %}
-    <div class="col-lg-4 col-sm-6">
-        <table class="record_properties">
-            <tbody>
-            <tr>
-                <th>{{ ride.who.name|trans }}</th>
-                <td>{{ ride.user.firstname }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Departure'|trans }}</th>
-                <td>{{ ride.departure }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Destination'|trans }}</th>
-                <td>{{ ride.destination }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Departuretime'|trans }}</th>
-                <td>{{ ride.departuretime|date('Y-m-d H:i:s') }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Departureanytime'|trans }}</th>
-                <td>{{ ride.departureanytime }}</td>
-            </tr>
+    <div class="container" xmlns="http://www.w3.org/1999/html">
+        <div class="row">
+            <div class="col-lg-2">
+                <img class="img-thumbnail" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
 
-            <tr>
-                <th>{{ 'Oneseatcost'|trans }}</th>
-                <td>{{ ride.oneseatcost }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Returndate'|trans }}</th>
-                <td>{{ ride.returndate|date('Y-m-d H:i:s') }}</td>
-            </tr>
-            <tr>
-                <th>{{ 'Returnanytime'|trans }}</th>
-                <td>{{ ride.returnanytime }}</td>
-            </tr>
-            </tbody>
-        </table>
+                <p>
+                    <span class="glyphicon glyphicon-thumbs-up pull-left"></span>
+                    {{ ride.user.likes }}
+                    <span class="glyphicon glyphicon-thumbs-down pull-right"></span>
+                    <span class="pull-right">{{ ride.user.dislikes }}</span>
+                </p>
+
+                <p>
+                    <span class="glyphicon glyphicon-certificate"></span>
+                    {{ ride.user.points }} {{ 'Points'|trans }}
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <p>
+                    <span class="lead">{{ ride.user.firstname }}</span>
+                    <span class="text-muted">{{ ride.who.name|trans|lower }}</span>
+                    {#<span class="glyphicon {% if ride.who.name|trans =='Driver' %}glyphicon-car{% else %}glyphicon-user {% endif %}"></span>#}
+
+                    <!-- Contact modal form-->
+                    <button type="button" class="pull-right btn btn-success btn-sm" data-toggle="modal"
+                            data-target="#contact">{{ 'contact'|trans }}</button>
+
+                <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">{{ 'messages.new'|trans }}</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <p><strong>{{ 'to'|trans }}:</strong> {{ ride.user.firstname }}</p>
+
+                                <p><strong>{{ 'from'|trans }}:</strong> {{ app.user.lastname|capitalize }} {{ app.user.firstname|capitalize }}  {{ app.user.email }}</p>
+
+                                <div class="form-group row">
+                                    <div class="col-lg-4">
+                                        <label for="messagetitle">{{ 'topic'|trans }}</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="messagetopic" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-4">
+                                        <label for="contactmessage">{{ 'message'|trans }}</label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <textarea id="contactmessage" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success">{{ 'send'|trans }}</button>
+                                <button type="button" class="btn btn-danger"
+                                        data-dismiss="modal">{{ 'cancel'|trans }}</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+                <!-- End Contact modal form -->
+                </p>
+                <p class="text-muted">{{ 'Lookingforroutes'|trans }}</p>
+
+                <p>
+                    <strong>
+                        <span class="glyphicon glyphicon-road"></span>
+                        {{ ride.departure }}
+                        <span class="glyphicon glyphicon-arrow-right"></span>
+                        {{ ride.destination }} ({{ ride.distance }})
+                    </strong>
+                </p>
+
+                <p>
+                    <span class="glyphicon glyphicon-clock"></span>
+                    <strong>{{ 'Departuretime'|trans }}</strong>
+                    {% if ride.departureanytime == 0 %}
+                        {{ ride.departuretime|date('Y-m-d') }} {{ 'at'|trans }} {{ ride.departuretime|date('H:i:s') }}
+                    {% else %}
+                        {{ ride.departuretime|date('Y-m-d') }}
+                        <span class="text-success">{{ 'Departureanytime'|trans }}</span>
+                    {% endif %}
+                </p>
+
+                <p>
+                    <span class="glyphicon glyphicon-usd"></span>
+                    <strong>
+                        {% if ride.who== 'Driver' %}
+                            {{ 'Oneseatcost'|trans }}
+                        {% else %}
+                            {{ 'Readytopay'|trans }}
+                        {% endif %}
+                    </strong>
+
+                    {{ ride.oneseatcost }} {{ ride.currency|trans }}
+                </p>
+                <button class="btn btn-success" type="button">{{ 'Offertrip'|trans }}</button>
+            </div>
+            <div class="col-lg-4">
+                <div id="map-user-canvas" class="hidden-xs"></div>
+            </div>
+        </div>
     </div>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        var ride = { 0: {{ ride.departurelatitude}}, 1:{{ ride.departurelongitude }}, 2: {{ ride.destinationlatitude }}, 3:{{ ride.destinationlongitude }} }
+    </script>
+    <script src="{{ asset('public/js/googleUserMap.js') }}"></script>
 {% endblock %}

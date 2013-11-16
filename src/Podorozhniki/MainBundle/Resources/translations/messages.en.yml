@@ -17,24 +17,36 @@ places:
     addedByMe:  Added by me
     addPublic: Add public place
 
+message:          Message
 messages:
      my:          My messages
-calendar:         Calendar
-search:           Search
-Who:              I am
-Firstname:        Firstname
-Departure:        From
-Destination:      To
-Departuretime:    Departure time
-Departureanytime: Any time
-Numberofseats:    Number of seats
-Oneseatcost:      One seat cost
-Currency:         Currency
-Returndate:       Return date
-Returnanytime:    Any time
-Driver:           Driver
-Passenger:        Passenger
-Seatsleft:        Seats left
+     new:         New Message
 Add:              Add
 at:               at
+calendar:         Calendar
+cancel:           Cancel
+contact:          Contact
+Currency:         Currency
+Departure:        From
+Departureanytime: Any time
+Departuretime:    Departure time
+Destination:      To
+Driver:           Driver
+Firstname:        Firstname
+from:             From
+Lookingforroutes: Looking for companion to the route
+Numberofseats:    Number of seats
+Offertrip:        Offer a trip
+Oneseatcost:      One seat cost
+Passenger:        Passenger
+Points:           points
+Readytopay:       Ready to pay for one seat
+Returnanytime:    Any time
+Returndate:       Return date
+search:           Search
+Seatsleft:        Seats left
+send:             Send
 smartridesharing: smart ridesharing
+to:               Кому
+topic:            Topic
+Who:              I am

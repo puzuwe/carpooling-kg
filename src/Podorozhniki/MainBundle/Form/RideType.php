@@ -28,6 +28,7 @@ class RideType extends AbstractType
             ->add('who',null,array('multiple'=>false,'expanded'=>true,'attr'=>array('data-toggle'=>"buttons","class"=>"btn-group")))
             ->add('departure', null, array('attr' => array('autocomplete' => 'on','onblur'=>'setMarkerFromName("departure","a")')))
             ->add('destination', null, array('attr' => array('autocomplete' => 'on', 'onblur' => 'setMarkerFromName("destination","b")')))
+            ->add('distance',null,array('attr'=>array('readonly'=>'readonly')))
             ->add('departuretime', 'datetime', array('input' => 'datetime', 'widget' => 'single_text'))
             ->add('departureanytime')
             ->add('numberofseats')

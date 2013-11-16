@@ -123,6 +123,7 @@ function calcRoute(departure,destination) {
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
+                document.getElementById("podorozhniki_mainbundle_ride_distance").value = response.routes[0].legs[0].distance.text;
             }
         });
     }

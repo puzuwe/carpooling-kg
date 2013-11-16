@@ -64,16 +64,18 @@
 
 <!-- FOOTER -->
 {{ include('::_footer.html.twig') }}
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ asset('public/bootstrap-3.0.0/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/bootstrap-3.0.0/js/bootstrap-datetimepicker.js') }}"></script>
+    <script src="{{ asset('public/js/main.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCb5Yu6Q8J8ltBhTnE-m1XhkhXvM4TPLq0&sensor=false&libraries=places&language={% if app.request.get('_locale') is not defined %}ru{% else %}{{ app.request.get('_locale') }} {% endif %}"></script>
+    <script src="{{ asset('public/js/google.js') }}"></script>
+{% endblock %}
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="//code.jquery.com/jquery.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ asset('public/bootstrap-3.0.0/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('public/bootstrap-3.0.0/js/bootstrap-datetimepicker.js') }}"></script>
-<script src="{{ asset('public/js/main.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCb5Yu6Q8J8ltBhTnE-m1XhkhXvM4TPLq0&sensor=false&libraries=places&language={% if app.request.get('_locale') is not defined %}ru{% else %}{{ app.request.get('_locale') }} {% endif %}"></script>
-<script src="{{ asset('public/js/google.js') }}"></script>
+
 </body>
 </html>

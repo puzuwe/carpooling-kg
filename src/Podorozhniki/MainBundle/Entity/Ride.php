@@ -445,4 +445,32 @@ class Ride
     {
         return $this->destinationlongitude;
     }
+    /**
+     * @var string
+     */
+    private $distance;
+
+
+    /**
+     * Set distance
+     *
+     * @param string $distance
+     * @return Ride
+     */
+    public function setDistance($distance)
+    {
+        $this->distance = $distance;
+    
+        return $this;
+    }
+
+    /**
+     * Get distance
+     *
+     * @return string 
+     */
+    public function getDistance()
+    {
+        return $this->distance;
+    }
 }

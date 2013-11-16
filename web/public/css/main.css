@@ -1,13 +1,16 @@
 html,body{
     height: 100%;
 }
-#map-canvas {
+#map-canvas, #map-user-canvas {
     height: 500px;
     width: 100%;
     margin: 0px;
     padding: 0px
 }
-
+#map-user-canvas{
+    width: 400px;
+    height: 400px;
+}
 .invisible {
     visibility: hidden;
 }
