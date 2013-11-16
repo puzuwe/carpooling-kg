@@ -1,0 +1,48 @@
+<!-- Contact modal form-->
+
+<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">{{ 'messages.new'|trans }}</h4>
+            </div>
+            <div class="modal-body">
+
+                <p><strong>{{ 'to'|trans }}:</strong> {{ ride.user.firstname }}</p>
+
+                {% if app.user is not null %}
+                <p><strong>{{ 'from'|trans }}:</strong> {{ app.user.lastname|capitalize }} {{ app.user.firstname|capitalize }}  {{ app.user.email }}</p>
+                {% endif %}
+
+                <div class="form-group row">
+                    <div class="col-lg-4">
+                        <label for="messagetitle">{{ 'topic'|trans }}</label>
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="text" id="messagetopic" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-4">
+                        <label for="contactmessage">{{ 'message'|trans }}</label>
+                    </div>
+                    <div class="col-lg-8">
+                        <textarea id="contactmessage" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success">{{ 'send'|trans }}</button>
+                <button type="button" class="btn btn-danger"
+                        data-dismiss="modal">{{ 'cancel'|trans }}</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- End Contact modal form -->

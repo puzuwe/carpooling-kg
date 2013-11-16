@@ -59,6 +59,7 @@ security:
                 use_forward:    false
                 check_path:     fos_user_security_check
                 failure_path:   null
+                use_referer:    true
           #      default_target_path: podorozhniki_mainbundle_homepage
             logout:
                 path:           fos_user_security_logout

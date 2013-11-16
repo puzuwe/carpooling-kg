@@ -22,55 +22,10 @@
                     <span class="lead">{{ ride.user.firstname }}</span>
                     <span class="text-muted">{{ ride.who.name|trans|lower }}</span>
                     {#<span class="glyphicon {% if ride.who.name|trans =='Driver' %}glyphicon-car{% else %}glyphicon-user {% endif %}"></span>#}
-
-                    <!-- Contact modal form-->
                     <button type="button" class="pull-right btn btn-success btn-sm" data-toggle="modal"
-                            data-target="#contact">{{ 'contact'|trans }}</button>
-
-                <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"
-                                        aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">{{ 'messages.new'|trans }}</h4>
-                            </div>
-                            <div class="modal-body">
-
-                                <p><strong>{{ 'to'|trans }}:</strong> {{ ride.user.firstname }}</p>
-
-                                <p><strong>{{ 'from'|trans }}:</strong> {{ app.user.lastname|capitalize }} {{ app.user.firstname|capitalize }}  {{ app.user.email }}</p>
-
-                                <div class="form-group row">
-                                    <div class="col-lg-4">
-                                        <label for="messagetitle">{{ 'topic'|trans }}</label>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <input type="text" id="messagetopic" class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-4">
-                                        <label for="contactmessage">{{ 'message'|trans }}</label>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <textarea id="contactmessage" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success">{{ 'send'|trans }}</button>
-                                <button type="button" class="btn btn-danger"
-                                        data-dismiss="modal">{{ 'cancel'|trans }}</button>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
-                <!-- /.modal -->
-                <!-- End Contact modal form -->
+                            data-target="{% if app.user is null %}#loginModal {% else %}#contact{% endif %}">{{ 'contact'|trans }}</button>
+                    <!--contact Modal -->
+                    {{ include('PodorozhnikiMainBundle:Rides:_contactModal.html.twig') }}
                 </p>
                 <p class="text-muted">{{ 'Lookingforroutes'|trans }}</p>
 
