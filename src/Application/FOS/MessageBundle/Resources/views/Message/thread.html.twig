@@ -17,11 +17,14 @@
 {% endfor %}
 
 <h3>{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h3>
-
+{% form_theme form ':Form:fields.html.twig' %}
 <form action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
     {{ form_widget(form) }}
-
-    <input type="submit" />
+    <div class="form-group">
+        <div class="col-md-offset-4 col-md-8">
+            <button class="btn btn-success"  type="submit" >{{ 'send'|trans }}</button>
+        </div>
+    </div>
 </form>
 
 {% endblock %}
