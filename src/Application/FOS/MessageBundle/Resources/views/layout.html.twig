@@ -5,7 +5,7 @@
 {% block body %}
         <h1>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</h1>
 
-    <div class="col-lg-1">
+    <div class="col-lg-2">
         <a class="btn btn-success btn-sm" href="{{ url('fos_message_thread_new' )}}">{{ 'send_new'|trans }}</a>
         <ul class="list-unstyled">
             <li><a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>

@@ -105,4 +105,7 @@ podorozhniki_rides_rest:
 
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
-    prefix: /message
+    prefix: /{_locale}/message
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale:  en|tr|ru
