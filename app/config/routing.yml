@@ -1,3 +1,7 @@
+application_fos_message:
+    resource: "@ApplicationFOSMessageBundle/Resources/config/routing.yml"
+    prefix:   /
+
 
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
@@ -98,3 +102,7 @@ podorozhniki_rides_rest:
     defaults: { _locale: %locale% }
     requirements:
         _locale:  en|tr|ru
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /message

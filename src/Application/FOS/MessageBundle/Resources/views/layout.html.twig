@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}
+{% endblock %}
+{% block body %}
+        <h1>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</h1>
+
+    <div class="col-lg-1">
+        <a class="btn btn-success btn-sm" href="{{ url('fos_message_thread_new' )}}">{{ 'send_new'|trans }}</a>
+        <ul class="list-unstyled">
+            <li><a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
+            <li><a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>
+            <li><a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>
+        </ul>
+    </div>
+    <div class="col-lg-8">
+        {% block fos_message_content %}{% endblock %}
+    </div>
+{% endblock %}

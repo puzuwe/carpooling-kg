@@ -63,6 +63,8 @@ doctrine:
                     ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
                     PodorozhnikiMainBundle: ~
+                    FOSMessageBundle: ~
+                    ApplicationFOSMessageBundle: ~
 # Swiftmailer Configuration
 swiftmailer:
     transport: %mailer_transport%
@@ -125,3 +127,8 @@ fos_facebook:
     secret: 70b56308d2a69194091acc847a123991
     cookie: true
     permissions: [email, user_hometown, user_location,user_birthday]
+
+fos_message:
+    db_driver:      orm
+    thread_class:   Application\FOS\MessageBundle\Entity\Thread
+    message_class:  Application\FOS\MessageBundle\Entity\Message
