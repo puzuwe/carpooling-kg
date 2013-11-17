@@ -238,4 +238,43 @@ class User extends BaseUser implements ParticipantInterface
     {
         return $this->points;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $messages;
+
+
+    /**
+     * Add messages
+     *
+     * @param \Application\FOS\MessageBundle\Entity\Message $messages
+     * @return User
+     */
+    public function addMessage(\Application\FOS\MessageBundle\Entity\Message $messages)
+    {
+        $this->messages[] = $messages;
+    
+        return $this;
+    }
+
+    /**
+     * Remove messages
+     *
+     * @param \Application\FOS\MessageBundle\Entity\Message $messages
+     */
+    public function removeMessage(\Application\FOS\MessageBundle\Entity\Message $messages)
+    {
+        $this->messages->removeElement($messages);
+    }
+
+    /**
+     * Get messages
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+
 }
