@@ -105,4 +105,4 @@ podorozhniki_rides_rest:
 
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
-    prefix: /fos/message
+    prefix: /message

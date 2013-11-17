@@ -65,7 +65,7 @@
 
         <div class="form-group">
         <div class="col-md-offset-4 col-md-8">
-            {{ form_widget(form,{'attr':{'class':'btn btn-primary btn-block'}}) }}
+            {{ form_widget(form,{'attr':{'class':'btn btn-success'}}) }}
         </div>
         </div>
     {% endspaceless %}
@@ -133,3 +133,9 @@
         </div>
     {% endspaceless %}
 {% endblock choice_widget_expanded %}
+
+{% block textarea_widget %}
+    {% spaceless %}
+        <textarea class="form-control" {{ block('widget_attributes') }}>{{ value }}</textarea>
+    {% endspaceless %}
+{% endblock textarea_widget %}

@@ -57,7 +57,7 @@ class Builder extends  ContainerAware{
         $translator = $this->container->get("translator");
 
         $menu->addChild($translator->trans("routes.my"),array('route'=>'get_user_rides','routeParameters'=>array('userId'=>$user->getId())));
-        $menu->addChild($translator->trans("messages.my"),array("uri"=>"/"));
+        $menu->addChild($translator->trans("messages.my"),array("route"=>'fos_message_inbox' ));
         $menu->addChild($translator->trans("calendar"),array("uri"=>"/"));
         //$menu->addChild($translator->trans("search"),array("uri"=>"/"));
         return $menu;

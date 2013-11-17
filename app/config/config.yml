@@ -63,6 +63,7 @@ doctrine:
                     ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
                     PodorozhnikiMainBundle: ~
+                    FOSMessageBundle: ~
                     ApplicationFOSMessageBundle: ~
 # Swiftmailer Configuration
 swiftmailer:

@@ -1,0 +1,11 @@
+{% extends 'FOSMessageBundle::layout.html.twig' %}
+
+{% block fos_message_content %}
+
+<h2 class="text-center">{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h2>
+{% form_theme form ":Form:fields.html.twig" %}
+<form action="{{ url('fos_message_thread_new') }}" method="post" class="form-horizontal">
+    {{ form_widget(form) }}
+</form>
+
+{% endblock %}
