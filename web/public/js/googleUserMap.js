@@ -4,11 +4,15 @@ var userMapOptions = {
     mapTypeId: google.maps.MapTypeId.ROADMAP
 }
 var userMap = new google.maps.Map(document.getElementById('map-user-canvas'), userMapOptions);
-var departureLatLng = new google.maps.LatLng(ride[0],ride[1]);
-var destinationLatLng = new google.maps.LatLng(ride[2],ride[3]);
-var directionsDisplay = new google.maps.DirectionsRenderer();
+var departureLatLng = new google.maps.LatLng(ride[0], ride[1]);
+var destinationLatLng = new google.maps.LatLng(ride[2], ride[3]);
+var directionsDisplay = new google.maps.DirectionsRenderer({'suppressMarkers': true});
 var directionsService = new google.maps.DirectionsService();
 var distance;
+
+setMarker(userMap,address.departure,departureLatLng,'a',false);
+setMarker(userMap,address.destination,destinationLatLng,'b',false);
+
 directionsDisplay.setMap(userMap);
 var request = { origin: departureLatLng, destination: destinationLatLng, travelMode: google.maps.TravelMode.DRIVING };
 directionsService.route(request, function (response, status) {

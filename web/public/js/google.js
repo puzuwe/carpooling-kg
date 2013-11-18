@@ -55,23 +55,26 @@ function setLatLng(type, address, lat, lng) {
     $('#podorozhniki_mainbundle_ride_' + type + 'latitude').val(lat);
     $('#podorozhniki_mainbundle_ride_' + type + 'longitude').val(lng);
 }
-function setMarker(map, address, latlng, letter) {
+function setMarker(map, address, latlng, letter,isdraggable) {
+    isdraggable = (typeof isdraggable === 'undefined');
     var marker = new google.maps.Marker({
         map: map,
         position: latlng,
         icon: googleIconsURL + 'letter_' + letter + '.png',
-        draggable: true
+        draggable: isdraggable
     });
     if(letter=='a'){
         markerA = marker;
     }else{
         markerB = marker;
     }
-    infoWin = new google.maps.InfoWindow();
-    infoWin.setContent(address);
-    infoWin.open(map, marker);
+
+    marker['infowindow'] = new google.maps.InfoWindow(
+        {content:address}
+    );
+    marker['infowindow'].open(map,marker);
     google.maps.event.addDomListener(marker, 'click', function () {
-        infoWin.open(map, marker);
+        this['infowindow'].open(map,this);
     });
     google.maps.event.addDomListener(marker,'dragend',function(event){
         var char = 'a';

@@ -19,7 +19,8 @@
             </div>
             <div class="col-md-6">
                 <p>
-                    <a href="{{ url('get_user',{'id': ride.user.id}) }}"><span class="lead">{{ ride.user.firstname }}</span></a>
+                    <a href="{{ url('get_user',{'id': ride.user.id}) }}"><span
+                                class="lead">{{ ride.user.firstname }}</span></a>
                     <span class="text-muted">{{ ride.who.name|trans|lower }}</span>
                     {#<span class="glyphicon {% if ride.who.name|trans =='Driver' %}glyphicon-car{% else %}glyphicon-user {% endif %}"></span>#}
                     <button type="button" class="pull-right btn btn-success btn-sm" data-toggle="modal"
@@ -73,7 +74,8 @@
 {% block javascripts %}
     {{ parent() }}
     <script>
-        var ride = { 0: {{ ride.departurelatitude}}, 1:{{ ride.departurelongitude }}, 2: {{ ride.destinationlatitude }}, 3:{{ ride.destinationlongitude }} }
+        var ride = { 0: {{ ride.departurelatitude}}, 1:{{ ride.departurelongitude }}, 2: {{ ride.destinationlatitude }}, 3:{{ ride.destinationlongitude }} };
+        var address = { 'departure':'{{ ride.departure}}', 'destination':'{{ ride.destination }}' };
     </script>
     <script src="{{ asset('public/js/googleUserMap.js') }}"></script>
 {% endblock %}
