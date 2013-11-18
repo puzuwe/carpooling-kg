@@ -2,7 +2,7 @@
 {% block body %}
     <div class="container" xmlns="http://www.w3.org/1999/html">
         <div class="row">
-            <div class="col-lg-2">
+            <div class="col-md-2">
                 <img class="img-thumbnail" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
 
                 <p>
@@ -17,9 +17,9 @@
                     {{ ride.user.points }} {{ 'Points'|trans }}
                 </p>
             </div>
-            <div class="col-lg-6">
+            <div class="col-md-6">
                 <p>
-                    <span class="lead">{{ ride.user.firstname }}</span>
+                    <a href="{{ url('get_user',{'id': ride.user.id}) }}"><span class="lead">{{ ride.user.firstname }}</span></a>
                     <span class="text-muted">{{ ride.who.name|trans|lower }}</span>
                     {#<span class="glyphicon {% if ride.who.name|trans =='Driver' %}glyphicon-car{% else %}glyphicon-user {% endif %}"></span>#}
                     <button type="button" class="pull-right btn btn-success btn-sm" data-toggle="modal"
@@ -63,7 +63,7 @@
                 </p>
                 <button class="btn btn-success" type="button">{{ 'Offertrip'|trans }}</button>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <div id="map-user-canvas" class="hidden-xs"></div>
             </div>
         </div>

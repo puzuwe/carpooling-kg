@@ -109,3 +109,11 @@ fos_message:
     defaults: { _locale: %locale% }
     requirements:
         _locale:  en|tr|ru
+
+fos_user_user:
+    type:     rest
+    resource: Application\Sonata\UserBundle\Controller\UsersController
+    prefix: /{_locale}
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale:  en|tr|ru

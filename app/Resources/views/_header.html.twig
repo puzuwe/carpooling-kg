@@ -16,6 +16,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li><a href="{{ url('fos_message_inbox') }}"><span class="glyphicon glyphicon-message-in"><</span><sup class="text-danger">{% if not fos_message_nb_unread() == 0 %}fos_message_nb_unread(){% endif %}</sup> </a></li>
                     <li class="dropdown">
                         <a data-toggle="dropdown" href="#" role="button">
                             {{  app.user.username }}

@@ -40,7 +40,7 @@ class UserRidesController extends FOSRestController
             $em->persist($ride);
             $em->flush();
 
-            return $this->redirect($this->generateUrl("podorozhniki_main_homepage"));
+            return $this->redirect($this->generateUrl("get_user_ride",array('userId'=>$ride->getUser()->getId(),'id'=>$ride->getId())));
         }
         return new Response("PodorozhnikiMainBundle:UserRides:postRides.html.twig", array("form" => $form->createView()));
 

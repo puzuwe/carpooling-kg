@@ -1,0 +1,33 @@
+<h1>{{ 'routes.all'|trans }}</h1>
+<table class="table table-responsive table-hover">
+    <thead>
+    <tr>
+        <th>{{ 'Who'|trans }}</th>
+        <th>{{ 'Firstname'|trans }}</th>
+        <th>
+            <span class="glyphicon {% if app.request.get('direction') == 'asc' %} glyphicon-up-arrow {% elseif app.request.get('direction') == 'desc' %}glyphicon-down-arrow{% endif %}"></span> {{ knp_pagination_sortable(rides,'Departure'|trans,'r.departure') }}
+        </th>
+        <th>{{ 'Destination'|trans }}</th>
+        <th><span class="glyphicon glyphicon-clock"></span></th>
+        <th>{{ 'Seatsleft'|trans }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for ride in rides %}
+
+        <tr class="cursor"
+            onclick="location.href ='{{ path('get_ride',{'id': ride.id}) }}' ">
+            <td>
+                <span class="glyphicon {% if ride.who|trans({},'messages','en')=='Driver' %} glyphicon-car  {% else %} glyphicon-user{% endif %}"></span>
+            </td>
+            <td>{{ ride.user.firstname|capitalize }}</td>
+            <td>{{ ride.departure }}</td>
+            <td>{{ ride.destination }}</td>
+            <td>{{ ride.departuretime | localizeddate('short','none',app.request.locale) }}
+                {{ 'at'|trans }} {{ ride.departuretime|date('h:m') }}</td>
+            <td>{{ ride.numberofseats }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{{ knp_pagination_render(rides) }}
