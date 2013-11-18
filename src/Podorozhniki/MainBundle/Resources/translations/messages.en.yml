@@ -3,24 +3,24 @@ routes:
     all:          All rides
     nearest:      Nearest rides
     popular:      Popular rides
-    add:          Add new ride
+    add:          New ride
     my:           My routes
 events:
-    events: Events
-    all:  All events
-    addedByMe:  Added by me
-    addEvent: Add event
+    events:       Events
+    all:          All events
+    addedByMe:    Added by me
+    addEvent:     Add event
 places:
-    places: Places
-    favorite: Favorite places
-    all:  All places
-    addedByMe:  Added by me
-    addPublic: Add public place
+    places:       Places
+    favorite:     Favorite places
+    all:          All places
+    addedByMe:    Added by me
+    addPublic:    Add public place
 
 message:          Message
 messages:
-     my:          My messages
-     new:         New Message
+    my:           My messages
+    new:          New Message
 Add:              Add
 at:               at
 calendar:         Calendar
