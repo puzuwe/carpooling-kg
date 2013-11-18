@@ -2,7 +2,7 @@
 {% block body %}
     <div class="col-md-2">
 
-        <img class="img-thumbnail" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
+        <img class="img-lg" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
 
         <p>
             <span class="glyphicon glyphicon-thumbs-up pull-left"></span>
@@ -19,6 +19,7 @@
     </div>
     <div class="col-md-10">
         <h3>{{ user.fullName }}</h3>
+        {{ include('ApplicationSonataUserBundle:Reviews:getUserReviews.html.twig',{'reviews': user.reviews}) }}
     </div>
     <div class="clearfix"></div>
     {{   include('PodorozhnikiMainBundle:Rides:getRides_content.html.twig',{ 'rides':rides } ) }}

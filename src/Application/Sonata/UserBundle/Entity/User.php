@@ -51,6 +51,7 @@ class User extends BaseUser implements ParticipantInterface
     {
         parent::__construct();
         $this->rides = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->reviews = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -276,5 +277,45 @@ class User extends BaseUser implements ParticipantInterface
     {
         return $this->messages;
     }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $reviews;
+
+
+    /**
+     * Add reviews
+     *
+     * @param \Application\Sonata\UserBundle\Entity\Review $reviews
+     * @return User
+     */
+    public function addReview(\Application\Sonata\UserBundle\Entity\Review $reviews)
+    {
+        $this->reviews[] = $reviews;
+    
+        return $this;
+    }
+
+    /**
+     * Remove reviews
+     *
+     * @param \Application\Sonata\UserBundle\Entity\Review $reviews
+     */
+    public function removeReview(\Application\Sonata\UserBundle\Entity\Review $reviews)
+    {
+        $this->reviews->removeElement($reviews);
+    }
+
+    /**
+     * Get reviews
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getReviews()
+    {
+        return $this->reviews;
+    }
+
 
 }

@@ -15,7 +15,7 @@
         <one-to-many target-entity="\Podorozhniki\MainBundle\Entity\Ride" mapped-by="user" field="rides"/>
         <one-to-many target-entity="\Application\FOS\MessageBundle\Entity\Message" mapped-by="sender"
                      field="messages"/>
-
+        <one-to-many target-entity="\Application\Sonata\UserBundle\Entity\Review" mapped-by="user" field="reviews"/>
     </entity>
 
 </doctrine-mapping>
