@@ -3,17 +3,18 @@
 {% trans from 'FOSMessageBundle' %}messenger{% endtrans %}
 {% endblock %}
 {% block body %}
-        <h1>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</h1>
+        <h1 class="text-center">{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</h1>
 
     <div class="col-lg-2">
-        <a class="btn btn-success btn-sm" href="{{ url('fos_message_thread_new' )}}">{{ 'send_new'|trans }}</a>
-        <ul class="list-unstyled">
+
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ url('fos_message_thread_new' )}}">{{ 'send_new'|trans }}</a></li>
             <li><a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
             <li><a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>
-            <li><a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>
+            <li><a href="{{ url('fos_message_deleted') }}">{{ 'deleted'|trans }}</a></li>
         </ul>
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-10">
         {% block fos_message_content %}{% endblock %}
     </div>
 {% endblock %}
