@@ -1,26 +1,25 @@
 {% extends '::base.html.twig' %}
 {% block body %}
     <div class="col-md-2">
+        <img class="img-lg center-block" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
 
-        <img class="img-lg" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
-
-        <p>
-            <span class="glyphicon glyphicon-thumbs-up pull-left"></span>
-            {{ user.likes }}
-            <span class="glyphicon glyphicon-thumbs-down pull-right"></span>
-            <span class="pull-right">{{ user.dislikes }}</span>
-        </p>
-
-        <p>
-            <span class="glyphicon glyphicon-certificate"></span>
-            {{ user.points }} {{ 'Points'|trans }}
-        </p>
-
+        <div class="img-lg center-block container">
+            <div class="row">
+                <span class="glyphicon glyphicon-thumbs-up pull-left"></span>
+                {{ user.likes }}
+                <span class="glyphicon glyphicon-thumbs-down pull-right"></span>
+                <span class="pull-right">{{ user.dislikes }}</span>
+            </div>
+            <div class="row">
+                <span class="glyphicon glyphicon-certificate"></span>
+                {{ user.points }} {{ 'Points'|trans }}
+            </div>
+        </div>
     </div>
     <div class="col-md-10">
         <h3>{{ user.fullName }}</h3>
         {{ include('ApplicationSonataUserBundle:Reviews:getUserReviews.html.twig',{'reviews': user.reviews}) }}
     </div>
     <div class="clearfix"></div>
-    {{   include('PodorozhnikiMainBundle:Rides:getRides_content.html.twig',{ 'rides':rides } ) }}
+    {{ include('PodorozhnikiMainBundle:Rides:getRides_content.html.twig',{ 'rides':rides } ) }}
 {% endblock %}

@@ -1,3 +1,5 @@
-forgotPassword: Забыли пароль?
-review:         Отзывы
-register:       Регистрация
+emptyreview:      Еще нет отзыва.
+forgotPassword:   Забыли пароль?
+leavereview:      Оставить отзыв
+reviews:          Отзывы
+register:         Регистрация

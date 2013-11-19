@@ -52,12 +52,12 @@ class Builder extends  ContainerAware{
 
     public function userMenu(FactoryInterface $factory, array $options){
         $user = $this->container->get('security.context')->getToken()->getUser();
-        $menu = $factory->createItem("userMenu",array('childrenAttributes'=>array('class'=>"nav nav-pills")));
+        $menu = $factory->createItem("userMenu",array('childrenAttributes'=>array('class'=>"nav nav-pills nav-justified")));
         $translator = $this->container->get("translator");
         $menu->addChild($translator->trans("routes.my"),array('route'=>'get_user_rides','routeParameters'=>array('userId'=>$user->getId())));
-        $menu->addChild($translator->trans("messages.my"),array("route"=>'fos_message_inbox' ));
+        $menu->addChild($translator->trans("mymessage"),array("route"=>'fos_message_inbox' ));
         $menu->addChild($translator->trans("calendar"),array("uri"=>"/"));
-        //$menu->addChild($translator->trans("search"),array("uri"=>"/"));
+        $menu->addChild($translator->trans("routes.add"),array("route"=>"new_user_ride","routeParameters"=>array('userId'=>$user->getId())));
         return $menu;
     }
 

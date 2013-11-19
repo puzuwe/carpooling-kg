@@ -47,12 +47,8 @@
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-8 margin-bottom-10">
                         {{ knp_menu_render("PodorozhnikiMainBundle:Builder:userMenu") }}
-                    </div>
-                    <div class="col-md-2">
-                        <a class=" btn btn-info btn-block"
-                           href="{{ path('new_user_ride',{'userId':app.user.id}) }}">{{ 'routes.add'|trans() }}</a>
                     </div>
                 </div>
             </div>

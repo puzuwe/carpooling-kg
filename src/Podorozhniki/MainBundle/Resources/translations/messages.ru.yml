@@ -19,9 +19,8 @@ places:
     addPublic:    Добавить общественное место
 
 message:          Сообщение
-messages:
-    my:           Мои сообщения
-    new:          Новое сообщение
+mymessage:        Мои сообщения
+newmessage:       Новое сообщение
 Add:              Добавить
 Addnew:           Добавить новый маршрут
 at:               в

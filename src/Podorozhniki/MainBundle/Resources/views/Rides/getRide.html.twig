@@ -3,19 +3,22 @@
     <div class="container" xmlns="http://www.w3.org/1999/html">
         <div class="row">
             <div class="col-md-2">
-                <img class="img-lg" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
+                <div class="container">
+                    <img class="img-lg center-block" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
 
-                <p>
-                    <span class="glyphicon glyphicon-thumbs-up pull-left"></span>
-                    {{ ride.user.likes }}
-                    <span class="glyphicon glyphicon-thumbs-down pull-right"></span>
-                    <span class="pull-right">{{ ride.user.dislikes }}</span>
-                </p>
-
-                <p>
-                    <span class="glyphicon glyphicon-certificate"></span>
-                    {{ ride.user.points }} {{ 'Points'|trans }}
-                </p>
+                    <div class="img-lg center-block container">
+                        <div class="row">
+                            <span class="glyphicon glyphicon-thumbs-up pull-left"></span>
+                            {{ ride.user.likes }}
+                            <span class="glyphicon glyphicon-thumbs-down pull-right"></span>
+                            <span class="pull-right">{{ ride.user.dislikes }}</span>
+                        </div>
+                        <div class="row">
+                            <span class="glyphicon glyphicon-certificate"></span>
+                            {{ ride.user.points }} {{ 'Points'|trans }}
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6">
                 <p>
@@ -64,7 +67,7 @@
                 </p>
                 <button class="btn btn-success" type="button">{{ 'Offertrip'|trans }}</button>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 hidden-xs">
                 <div id="map-user-canvas" class="hidden-xs"></div>
             </div>
         </div>
@@ -75,7 +78,7 @@
     {{ parent() }}
     <script>
         var ride = { 0: {{ ride.departurelatitude}}, 1:{{ ride.departurelongitude }}, 2: {{ ride.destinationlatitude }}, 3:{{ ride.destinationlongitude }} };
-        var address = { 'departure':'{{ ride.departure}}', 'destination':'{{ ride.destination }}' };
+        var address = { 'departure': '{{ ride.departure}}', 'destination': '{{ ride.destination }}' };
     </script>
     <script src="{{ asset('public/js/googleUserMap.js') }}"></script>
 {% endblock %}

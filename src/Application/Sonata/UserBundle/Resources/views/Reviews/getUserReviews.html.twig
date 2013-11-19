@@ -1,24 +1,32 @@
 {% if  reviews|length >0 %}
-    <h3>{{ 'reviews'|trans }}</h3>
-{% for review in reviews %}
-    <div class="row user-review">
 
-        <div class="col-md-1">
-            <img src="{{ asset('public/img/blank_user.png') }}" class="img-rounded img-sm"/>
+    <div class="row">
+        <div class="col-md-2">
+            <h3>{{ 'reviews'|trans }}</h3>
         </div>
-        <div class="col-md-11">
-            <p>
-                {{ review.reviewer.first().fullname }}
-            </p>
-
-            <p>
-                <span class="pull-right"> {{ review.published |date('Y-m-d h:m:s') }}</span>
-                {{ review.body }}
-            </p>
+        <div class="col-md-10">
+            <a href="#" class="btn btn-success pull-right">{{ 'leavereview'|trans }}</a>
         </div>
     </div>
+    {% for review in reviews %}
+        <div class="row user-review">
+            <div class="row">
+                <div class="col-md-1">
+                    <img src="{{ asset('public/img/blank_user.png') }}" class="img-rounded img-sm"/>
+                </div>
+                <div class="col-md-11">
+                    <p>
+                        <a href="{{ url('get_user',{'id': review.reviewer.first().id }) }}">{{ review.reviewer.first().fullname }}</a>
+                    </p>
+                    <p>
+                        {{ review.body }}
+                    </p>
+                    <span class="pull-right text-muted"> {{ review.published |date('Y-m-d h:m:s') }}</span>
+                </div>
+            </div>
+        </div>
 
-{% endfor %}
-    {% else %}
-        Еще нет отзыва.
+    {% endfor %}
+{% else %}
+    {{ 'emptyreview'|trans }}
 {% endif %}

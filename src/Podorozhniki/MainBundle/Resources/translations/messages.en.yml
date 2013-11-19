@@ -18,9 +18,8 @@ places:
     addPublic:    Add public place
 
 message:          Message
-messages:
-    my:           My messages
-    new:          New Message
+mymessage:        My messages
+newmessage:       New Message
 Add:              Add
 at:               at
 calendar:         Calendar
