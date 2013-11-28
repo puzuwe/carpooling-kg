@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Almaz
- * Date: 31.10.13
- * Time: 20:54
+ * Date: 28.11.13
+ * Time: 10:57
  */
 
 namespace Podorozhniki\MainBundle\DataFixtures\ORM;
@@ -12,26 +12,25 @@ namespace Podorozhniki\MainBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Podorozhniki\MainBundle\Entity\Currency;
+use Podorozhniki\MainBundle\Entity\Who;
 
-class LoadCurrencyData extends AbstractFixture implements OrderedFixtureInterface {
+class LoadWhoData extends AbstractFixture implements OrderedFixtureInterface{
 
     /**
      * Load data fixtures with the passed EntityManager
      *
-     * @param ObjectManager $manager
+     * @param \Doctrine\Common\Persistence\ObjectManager $manager
      */
     function load(ObjectManager $manager)
     {
-        $currencies = array("Сом","Доллар");
+        $types = ['Driver','Passenger'];
         $counter = 0;
-        foreach($currencies as $c){
-            $currency = new Currency();
-            $currency->setName($c);
-            $manager->persist($currency);
+        foreach($types as $type){
+            $who = new Who();
+            $who->setName($type);
+            $manager->persist($who);
             $manager->flush();
-
-            $this->setReference('currency-'.$counter++,$currency);
+            $this->setReference('who-'.$counter++,$who);
         }
     }
 
@@ -42,6 +41,6 @@ class LoadCurrencyData extends AbstractFixture implements OrderedFixtureInterfac
      */
     function getOrder()
     {
-        return 3;
+        return 2;
     }
 }
