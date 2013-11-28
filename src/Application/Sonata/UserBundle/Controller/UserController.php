@@ -24,7 +24,7 @@ class UserController extends Controller
 
     public function loginFbAction()
     {
-        return $this->redirect($this->generateUrl("_homepage"));
+        return $this->redirect($this->generateUrl("podorozhniki_main_homepage"));
     }
 
 }

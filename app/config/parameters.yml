@@ -6,9 +6,9 @@ parameters:
     database_name: dephnaybttm
     database_user: dephnaybttm
     database_password: 5PEsnE7agxtX
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
+    mailer_transport: gmail
+    mailer_host: ~
+    mailer_user: n.defeloper@gmail.com
+    mailer_password: ndefeloper
     locale: ru
     secret: ThisTokenIsNotSoSecretChangeIt
