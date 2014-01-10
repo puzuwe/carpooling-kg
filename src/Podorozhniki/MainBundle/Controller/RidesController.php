@@ -10,6 +10,8 @@ namespace Podorozhniki\MainBundle\Controller;
 
 
 use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class RidesController extends FOSRestController
 {
@@ -26,5 +28,19 @@ class RidesController extends FOSRestController
         $em = $this->getDoctrine()->getManager();
         $ride = $em->getRepository("PodorozhnikiMainBundle:Ride")->find($id);
         return $this->render("PodorozhnikiMainBundle:Rides:getRide.html.twig",array("ride"=>$ride));
+    }
+
+    public function getRidesAjaxAction(){
+        $response = new Response();
+        $start = $this->getRequest()->request->get('start');
+        $end = $this->getRequest()->request->get('end');
+        $routes = $this->getDoctrine()->getRepository('PodorozhnikiMainBundle:Ride')->findRouteLike($start,$end);
+        $serializer = $this->get('jms_serializer');
+        $response->setContent($serializer->serialize(array(
+            'data' => start,
+        ),'json'));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+
     }
 } 

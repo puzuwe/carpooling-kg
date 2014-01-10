@@ -27,4 +27,12 @@ class RideRepository extends EntityRepository
         $rides = $paginator->paginate($query,$request->query->get('page',1),$page_range);
         return $rides;
     }
+
+    public function findRouteLike($start,$end){
+        $query = $this->getEntityManager()->createQuery("
+        select r from PodorozhnikiMainBundle:Ride r where r.route like '%:start%:end%'"
+        )->setParameter('start',$start)->setParameter('end',$end);
+
+        return $query->getResult();
+    }
 } 

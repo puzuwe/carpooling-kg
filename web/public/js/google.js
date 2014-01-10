@@ -13,7 +13,7 @@ var origin, destination;
 var markerA,markerB;
 $(window).load(function () {
 
-    directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsDisplay =  new google.maps.DirectionsRenderer();
     directionsDisplay.setMap(map);
     directionsDisplay.setOptions({suppressMarkers: true});
 
@@ -121,13 +121,21 @@ function setMarkerFromName(location,letter){
 }
 
 function calcRoute(departure,destination) {
-    if(DepartureFilled && DestinationFilled){
-        var request = { origin: departure, destination: destination, travelMode: google.maps.TravelMode.DRIVING };
-        directionsService.route(request, function (response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setDirections(response);
-                document.getElementById("podorozhniki_mainbundle_ride_distance").value = response.routes[0].legs[0].distance.text;
-            }
-        });
+    if (DepartureFilled) {
+        if (DestinationFilled) {
+            var request = { origin: departure, destination: destination, travelMode: google.maps.TravelMode.DRIVING };
+            directionsService.route(request, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                    document.getElementById("podorozhniki_mainbundle_ride_distance").value = response.routes[0].legs[0].distance.text;
+                    var steps = response.routes[0].legs[0].steps;
+                    var route = "";
+                    for(var i=0;i<steps.length;i++){
+                        route += steps[i].start_point.toString() + steps[i].end_point.toString();
+                    }
+                    document.getElementById("podorozhniki_mainbundle_ride_route").value = route;
+                }
+            });
+        }
     }
 }

@@ -38,7 +38,7 @@ class AppKernel extends Kernel
             new FOS\FacebookBundle\FOSFacebookBundle(),
             new Application\FOS\MessageBundle\ApplicationFOSMessageBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
-
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

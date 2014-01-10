@@ -7,8 +7,8 @@ parameters:
     database_user: dephnaybttm
     database_password: 5PEsnE7agxtX
     mailer_transport: gmail
-    mailer_host: ~
-    mailer_user: n.defeloper@gmail.com
-    mailer_password: ndefeloper
+    mailer_host: null
+    mailer_user: nurolopher@gmail.com
+    mailer_password: Nurolopher!
     locale: ru
     secret: ThisTokenIsNotSoSecretChangeIt

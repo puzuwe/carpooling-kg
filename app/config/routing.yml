@@ -117,3 +117,10 @@ fos_user_user:
     defaults: { _locale: %locale% }
     requirements:
         _locale:  en|tr|ru
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+ride_ajax:
+    pattern: /ru/ajax/rides
+    defaults: { _controller:PodorozhnikiMainBundle:Rides:getRidesAjax }

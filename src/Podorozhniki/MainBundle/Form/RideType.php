@@ -41,6 +41,7 @@ class RideType extends AbstractType
             ->add('departurelatitude','hidden')
             ->add('destinationlongitude','hidden')
             ->add('destinationlatitude','hidden')
+            ->add('route','hidden')
             ->add('user', 'entity', array('class' => 'ApplicationSonataUserBundle:User', 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('u')->where('u.id=:id')->setParameter('id', $this->user->getId());
                 }, 'attr' => array('class' => 'invisible'), 'label_attr' => array('class' => 'invisible')))

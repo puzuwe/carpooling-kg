@@ -473,4 +473,33 @@ class Ride
     {
         return $this->distance;
     }
+
+    /**
+     * @var string
+     */
+    private $route;
+
+
+    /**
+     * Set route
+     *
+     * @param string $route
+     * @return Ride
+     */
+    public function setRoute($route)
+    {
+        $this->route = $route;
+    
+        return $this;
+    }
+
+    /**
+     * Get route
+     *
+     * @return string 
+     */
+    public function getRoute()
+    {
+        return $this->route;
+    }
 }
