@@ -60,7 +60,7 @@ function calcMainRoute(departure,destination) {
                     var datas = {};
                     datas.start = response.routes[0].legs[0].steps[0].start_point.toString() + response.routes[0].legs[0].steps[0].end_point.toString();
                     datas.end = response.routes[0].legs[0].steps[response.routes[0].legs[0].steps.length - 1].start_point.toString() + response.routes[0].legs[0].steps[response.routes[0].legs[0].steps.length - 1].end_point.toString();
-                    var urls = '/podorozhniki.kg/web/app_dev.php/ru/ajax/rides';
+                    var urls = '/ru/ajax/rides';
                     $.ajax({
                             url: urls,
                             type:'POST',

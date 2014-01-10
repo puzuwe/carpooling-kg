@@ -46,7 +46,7 @@ security:
             pattern:             .*
             fos_facebook:
                 app_url:        "http://apps.facebook.com/nursultant/podorozhniki.kg"
-                server_url:     "http://127.0.0.1/podorozhniki.kg/web/app_dev.php/"
+                server_url:     "http://carpooling.cloudcontrolled.com/"
                 login_path:     fos_user_security_login
                 check_path:     /facebook/login_check
                 provider:       fos_facebook_provider

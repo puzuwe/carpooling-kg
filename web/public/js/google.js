@@ -3,7 +3,7 @@
  */
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
-var googleIconsURL = 'http://localhost/podorozhniki.kg/web/public/img/icons/'
+var googleIconsURL = 'http://carpooling.cloudcontrolled.com/public/img/icons/'
 var mapOptions = {center: new google.maps.LatLng(42.8747, 74.6122), zoom: 7, mapTypeId: google.maps.MapTypeId.ROADMAP};
 var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 var geocoder = new google.maps.Geocoder();
