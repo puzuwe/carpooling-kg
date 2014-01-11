@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>An Error Occurred: {{ status_text }}</title>
+    <link rel="stylesheet" href="{{ asset('public/bootstrap-3.0.0/css/bootstrap.min.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('public/css/normalize.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('public/css/main.css') }}"/>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{{ asset('public/bootstrap-3.0.0/assets/js/html5shiv.js') }}"></script>
+    <script src="{{ asset('public/bootstrap-3.0.0/assets/js/respond.min.js') }}"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+<div class="container v-center">
+    <div class="row">
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-md-offset-1 col-lg-offset-1">
+            <a href="{{ path('podorozhniki_main_homepage') }}"><img src="{{ asset('public/img/logo.gif') }}"></a>
+        </div>
+        <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-8">
+        <section>
+            <p><strong>{{ status_code }}.</strong><span class="text-info">Thats an error.</span></p>
+
+            <p class="text-warning">
+                Something is broken. Please e-mail us at <code> admin@podorozhniki.kg </code> and let us know
+                what you were doing when this error occurred. We will fix it as soon
+                as possible. Sorry for any inconvenience caused.
+            </p>
+        </section>
+        </div>
+    </div>
+</div>
+<script src="{{ asset('public/js/jquery.js') }}"></script>
+<script src="{{ asset('public/bootstrap-3.0.0/js/bootstrap.min.js') }}"></script>
+</body>
+</html>
