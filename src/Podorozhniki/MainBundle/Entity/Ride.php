@@ -502,4 +502,9 @@ class Ride
     {
         return $this->route;
     }
+
+    public function getPrice()
+    {
+        return $this->oneseatcost.' '. $this->currency;
+    }
 }

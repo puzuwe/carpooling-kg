@@ -36,12 +36,14 @@ Driver:           Водитель
 Distance:         Расстояние
 Firstname:        Имя
 from:             От
+Lastname:         Фамилия
 Lookingforroutes: Ищет попутчиков по маршруту
 Numberofseats:    Количество мест
 Offertrip:        Предложить поездку
 Oneseatcost:      Стоимость 1-го места
 Passenger:        Пассажир
 Points:           баллов
+Price:            Цена
 Readytopay:       Готов платить за место
 Returnanytime:    Любое время
 Returndate:       Обратно
@@ -51,4 +53,5 @@ send:             Отправить
 smartridesharing: поиск попутчиков
 to:               Кому
 topic:            Тема
+Username:         Имя пользователя
 Who:              Я

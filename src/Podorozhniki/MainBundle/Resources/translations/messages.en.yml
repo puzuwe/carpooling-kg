@@ -33,12 +33,14 @@ Destination:      To
 Driver:           Driver
 Firstname:        Firstname
 from:             From
+Lastname:         Lastname
 Lookingforroutes: Looking for companion to the route
 Numberofseats:    Number of seats
 Offertrip:        Offer a trip
 Oneseatcost:      One seat cost
 Passenger:        Passenger
 Points:           points
+Price:            Price
 Readytopay:       Ready to pay for one seat
 Returnanytime:    Any time
 Returndate:       Return date
@@ -48,4 +50,5 @@ send:             Send
 smartridesharing: smart ridesharing
 to:               To
 topic:            Topic
+Username:         Username
 Who:              I am

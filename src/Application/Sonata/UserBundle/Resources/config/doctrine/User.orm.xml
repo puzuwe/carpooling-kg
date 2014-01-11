@@ -12,10 +12,22 @@
         <field name="likes" type="integer" column="likes" nullable="true"/>
         <field name="dislikes" type="integer" column="dislikes" nullable="true"/>
         <field name="points" type="integer" column="points" nullable="true"/>
-        <one-to-many target-entity="\Podorozhniki\MainBundle\Entity\Ride" mapped-by="user" field="rides"/>
+        <one-to-many target-entity="\Podorozhniki\MainBundle\Entity\Ride" mapped-by="user" field="rides">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+                </one-to-many>
         <one-to-many target-entity="\Application\FOS\MessageBundle\Entity\Message" mapped-by="sender"
-                     field="messages"/>
-        <one-to-many target-entity="\Application\Sonata\UserBundle\Entity\Review" mapped-by="user" field="reviews"/>
+                     field="messages">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+                </one-to-many>
+        <one-to-many target-entity="\Application\Sonata\UserBundle\Entity\Review" mapped-by="user" field="reviews">
+                <cascade>
+                    <cascade-all/>
+                </cascade>
+                </one-to-many>
     </entity>
 
 </doctrine-mapping>

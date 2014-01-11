@@ -1,0 +1,28 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="sonata.admin.currency" class="Podorozhniki\MainBundle\Admin\CurrencyAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Extra" label="Currency"/>
+            <argument />
+            <argument>Podorozhniki\MainBundle\Entity\Currency</argument>
+            <argument />
+            <call method="setTranslationDomain">
+                <argument>PodorozhnikiMainBundle</argument>
+            </call>
+        </service>
+        <service id="sonata.admin.ride" class="Podorozhniki\MainBundle\Admin\RideAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Extra" label="Rides"/>
+            <argument/>
+            <argument>Podorozhniki\MainBundle\Entity\Ride</argument>
+            <argument/>
+        </service>
+
+        <service id="sonata.admin.who" class="Podorozhniki\MainBundle\Admin\WhoAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Extra" label="Who"/>
+            <argument/>
+            <argument>Podorozhniki\MainBundle\Entity\Who</argument>
+            <argument/>
+        </service>
+    </services>
+</container>

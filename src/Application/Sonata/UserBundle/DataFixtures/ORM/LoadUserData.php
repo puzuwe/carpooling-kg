@@ -29,8 +29,8 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
     {
         $users = [
             [
-                'username' => 'admin',
-                'email' => 'admin@school.kg',
+                'username' => 'admin@podorozhniki.kg',
+                'email' => 'admin@podorozhniki.kg',
                 'plain_password' => 'password',
                 'super_admin' => true,
                 'enabled' => true,
@@ -39,8 +39,8 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
                 'reference' => 'admin'
             ],
             [
-                'username' => 'nursultan',
-                'email' => 'nursultan2010@gmail.com',
+                'username' => 'nursultan@gmail.com',
+                'email' => 'nursultan@gmail.com',
                 'plain_password' => 'nursultan',
                 'super_admin' => false,
                 'enabled' => true,
@@ -49,7 +49,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
                 'reference' => 'user-0'
             ],
             [
-                'username' => 'nurali',
+                'username' => 'nurali@gmail.com',
                 'email' => 'nurali@gmail.com',
                 'plain_password' => 'nurali',
                 'super_admin' => false,

@@ -3,6 +3,8 @@ imports:
     - { resource: security.yml }
     - { resource: Sonata/block_bundle.yml }
     - { resource: @FOSUserBundle/Resources/config/security.xml }
+    - { resource: @PodorozhnikiMainBundle/Resources/config/admin.xml }
+    - { resource: @ApplicationSonataUserBundle/Resources/config/admin.xml }
 framework:
     #esi:             ~
     translator:      { fallback: %locale% }
@@ -132,3 +134,7 @@ fos_message:
     db_driver:      orm
     thread_class:   Application\FOS\MessageBundle\Entity\Thread
     message_class:  Application\FOS\MessageBundle\Entity\Message
+
+sonata_admin:
+   title: Podorozhniki
+   title_logo:  public/img/logo.gif
