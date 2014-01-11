@@ -64,3 +64,11 @@ footer {
 .v-center{
     padding-top: 10%;
 }
+
+.logo{
+    display: block;
+    padding: 10px;
+}
+.logo > img{
+    width: 32px;
+}
