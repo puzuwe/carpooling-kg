@@ -2,7 +2,7 @@
 {% block body %}
     <div class="container" xmlns="http://www.w3.org/1999/html">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 margin-bottom-10">
                 <div class="container">
                     <img class="img-lg center-block" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
 
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5 margin-bottom-10">
                 <p>
                     <a href="{{ url('get_user',{'id': ride.user.id}) }}"><span
                                 class="lead">{{ ride.user.firstname }}</span></a>
@@ -67,7 +67,7 @@
                 </p>
                 <button class="btn btn-success" type="button">{{ 'Offertrip'|trans }}</button>
             </div>
-            <div class="col-md-4 hidden-xs">
+            <div class="col-md-5 hidden-xs">
                 <div id="map-user-canvas" class="hidden-xs"></div>
             </div>
         </div>

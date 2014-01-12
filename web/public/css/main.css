@@ -27,7 +27,6 @@ html,body{
 #main {
     overflow: auto;
     padding-bottom: 100px;
-    padding-top: 60px;
     min-height: 100%;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
     -moz-box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
@@ -102,4 +101,36 @@ footer {
 
 .container {
     max-width: 1000px;
+}
+
+.home-offer {
+    background: none repeat scroll 0 0 #4BB9F8;
+    float: right;
+    height: 170px;
+    left: 20px;
+    width: 190px;
+}
+
+.home-offer > h4 {
+    color: #ffffff;
+    margin-left: 15px;
+}
+
+.home-offer > h4:last-child {
+    margin-left: 50px;
+}
+
+header {
+    border-radius: 0 !important;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1000px;
+    margin-bottom: 0 !important;
+}
+
+.driver {
+    background: url('../img/driver-post-trip.png') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 32px;
+    margin: 26px auto;
+    width: 133px;
 }

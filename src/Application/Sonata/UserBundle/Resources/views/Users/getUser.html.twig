@@ -1,22 +1,20 @@
 {% extends '::base.html.twig' %}
 {% block body %}
-    <div class="col-md-2">
-        <img class="img-lg center-block" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
+    <div class="col-md-2 col-sm-2">
+        <img class="img-lg center-block img-responsive" src="{{ asset('public/img/blank_user.png') }}" alt="No image"/>
 
-        <div class="img-lg center-block container">
-            <div class="row">
-                <span class="glyphicon glyphicon-thumbs-up pull-left"></span>
-                {{ user.likes }}
-                <span class="glyphicon glyphicon-thumbs-down pull-right"></span>
-                <span class="pull-right">{{ user.dislikes }}</span>
-            </div>
-            <div class="row">
-                <span class="glyphicon glyphicon-certificate"></span>
-                {{ user.points }} {{ 'Points'|trans }}
-            </div>
+        <div>
+            <span class="glyphicon glyphicon-thumbs-up pull-left"></span>
+            {{ user.likes }}
+            <span class="glyphicon glyphicon-thumbs-down pull-right"></span>
+            <span class="pull-right">{{ user.dislikes }}</span>
+        </div>
+        <div>
+            <span class="glyphicon glyphicon-certificate"></span>
+            {{ user.points }} {{ 'Points'|trans }}
         </div>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-10 col-sm-10">
         <h3>{{ user.fullName }}</h3>
         {{ include('ApplicationSonataUserBundle:Reviews:getUserReviews.html.twig',{'reviews': user.reviews}) }}
     </div>
