@@ -5,14 +5,14 @@
                 <p>2013 "Podorozhniki.kg" - {{ 'smartridesharing'|trans }}</p>
             </div>
             <div class="col-md-4">
-                <ul class="list-inline">
-                    <li>
-                        <a href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'en'})) }}">English </a>
-                    </li>
-                    <li>
-                        <a href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'ru'})) }}">Русский</a>
-                    </li>
-                </ul>
+                {#<ul class="list-inline">#}
+                {#<li>#}
+                {#<a href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'en'})) }}">English </a>#}
+                {#</li>#}
+                {#<li>#}
+                {#<a href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'ru'})) }}">Русский</a>#}
+                {#</li>#}
+                {#</ul>#}
             </div>
         </div>
     </div>

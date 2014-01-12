@@ -1,5 +1,6 @@
 html,body{
     height: 100%;
+
 }
 #map-canvas, #map-user-canvas {
     height: 500px;
@@ -28,6 +29,9 @@ html,body{
     padding-bottom: 100px;
     padding-top: 60px;
     min-height: 100%;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
+    box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
 }
 
 footer {
@@ -35,8 +39,10 @@ footer {
     margin-top: -100px;
     height: 100px;
     clear: both;
-    border-top: 1px solid #FF7963;
     padding-top: 10px;
+    background-color: #86BA17;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 .img-sm{
@@ -71,4 +77,29 @@ footer {
 }
 .logo > img{
     width: 32px;
+}
+
+.form-search .input-group > .input-group-addon {
+    padding: 0 10px;
+    background-color: #ffffff;
+}
+
+.form-search .input-group > .input-group-addon > img {
+    width: 32px;
+}
+
+.form-search {
+    background: url('../img/background-homepage-search.png');
+    height: 358px;
+    position: relative;
+}
+
+.form-search > form {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.container {
+    max-width: 1000px;
 }

@@ -11,48 +11,71 @@
                 <img src="{{ asset('public/img/logo.gif') }}">
             </a>
         </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                {{ knp_menu_render('PodorozhnikiMainBundle:Builder:topMenu') }}
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            {{ knp_menu_render('PodorozhnikiMainBundle:Builder:topMenu') }}
 
-                <!-- Top navbar right -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li><a href="{{ url('fos_message_inbox') }}"><span class="glyphicon glyphicon-message-in"><</span><sup class="text-danger">{% if not fos_message_nb_unread() == 0 %}fos_message_nb_unread(){% endif %}</sup> </a></li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" href="#" role="button">
-                            {{  app.user.username }}
-                            <span class="glyphicon glyphicon-user"></span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel1">
+            <!-- Top navbar right -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li><a href="{{ url('fos_message_inbox') }}"><span class="glyphicon glyphicon-message-in"><</span><sup
+                                class="text-danger">{% if not fos_message_nb_unread() == 0 %}fos_message_nb_unread(){% endif %}</sup>
+                    </a></li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" href="#" role="button">
+                        {{ app.user.username }}
+                        <span class="glyphicon glyphicon-user"></span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel1">
 
-                            <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="{{ path('sonata_user_profile_show',{'_locale': "en"}) }}">Show
-                                    profile</a>
-                            </li>
-                            <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="{{ path('sonata_user_profile_edit') }}">Edit
-                                    profile</a>
-                            <li role="presentation">
-                            <li role="presentation" class="divider"></li>
-                            <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="{{ path('fos_user_security_logout') }}">
-                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                                </a>
-                            </li>
-                        </ul>
-                        {% else %}
-                            <li>
-                            <a class="btn" data-toggle="modal" data-target="#loginModal">
-                                {{ 'layout.login'|trans({},'FOSUserBundle') }}
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1"
+                               href="{{ path('sonata_user_profile_show',{'_locale': "en"}) }}">Show
+                                profile</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="{{ path('sonata_user_profile_edit') }}">Edit
+                                profile</a>
+                        <li role="presentation">
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="{{ path('fos_user_security_logout') }}">
+                                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                             </a>
-                        </li><li>
-                            <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({},'FOSUserBundle') }}</a>
+                        </li>
+                    </ul>
+                    {% else %}
+                <li>
+                    <a class="btn" data-toggle="modal" data-target="#loginModal">
+                        {{ 'layout.login'|trans({},'FOSUserBundle') }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({},'FOSUserBundle') }}</a>
+                <li>
+                    {% endif %}
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon bfh-flag-RU"> </i><b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
                         <li>
-                        {% endif %}
-                    </li>
-                </ul>
-            </div>
+                            <a tabindex="-1" data-option="ru_RU"
+                               href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'ru'})) }}">
+                                <i class="glyphicon bfh-flag-RU"></i>Русский</a>
+                        </li>
+                        <li>
+                            <a tabindex="-1"
+                               href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'en'})) }}"
+                               data-option="en_US">
+                                <i class="glyphicon bfh-flag-US"></i>English</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </header>
