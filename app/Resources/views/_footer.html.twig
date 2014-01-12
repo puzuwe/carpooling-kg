@@ -1,18 +1,33 @@
 <footer>
-    <div class="container">
+    <div class="footer-header">
+        <div class="right-triange"></div>
         <div class="row">
-            <div class="col-md-4">
-                <p>2013 "Podorozhniki.kg" - {{ 'smartridesharing'|trans }}</p>
+            <div class="col-sm-4">Using Podorozhniki</div>
+            <div class="col-sm-4">Our Company</div>
+            <div class="col-sm-4">Podorozhniki Blog</div>
+        </div>
+        <div class="left-triange"></div>
+    </div>
+    <div class="container">
+        <div class="row footer-list">
+            <div class="col-sm-4">
+                {#<p>2013 "Podorozhniki.kg" - {{ 'smartridesharing'|trans }}</p>#}
+                <ul class="list-unstyled">
+                    <li><a href="#">How Podorozhniki Works</a></li>
+                    <li><a href="#">Trust, Safety & Insurance</a></li>
+                    <li><a href="#">Frequently Asked Questions</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
-            <div class="col-md-4">
-                {#<ul class="list-inline">#}
-                {#<li>#}
-                {#<a href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'en'})) }}">English </a>#}
-                {#</li>#}
-                {#<li>#}
-                {#<a href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'ru'})) }}">Русский</a>#}
-                {#</li>#}
-                {#</ul>#}
+            <div class="col-sm-4">
+                <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">We're Hiring</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
             </div>
         </div>
     </div>
