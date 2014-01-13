@@ -62,13 +62,13 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a tabindex="-1" data-option="ru_RU"
-                               href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'ru'})) }}">
-                                <i class="glyphicon bfh-flag-RU"></i>Русский</a>
+                            <a tabindex="-1" data-option="ru_RU" class="language" href="javascript:void(0);"
+                               data-link="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'ru'})) }}">
+                            <i class="glyphicon bfh-flag-RU"></i>Русский</a>
                         </li>
                         <li>
-                            <a tabindex="-1"
-                               href="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'en'})) }}"
+                            <a tabindex="-1" class="language" href="javascript:void(0);"
+                               data-link="{{ path(app.request.get('_route'),app.request.get('_route_params')|merge({'_locale':'en'})) }}"
                                data-option="en_US">
                                 <i class="glyphicon bfh-flag-US"></i>English</a>
                         </li>

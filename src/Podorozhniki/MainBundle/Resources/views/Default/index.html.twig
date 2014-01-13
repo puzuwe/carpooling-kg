@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2 col-xs-5">
-                    <button class="btn btn-lg btn-danger">{{ 'search'|trans }}</button>
+                    <button class="btn btn-lg btn-warning">{{ 'search'|trans }}</button>
                 </div>
             </div>
         </form>
@@ -32,15 +32,20 @@
             <h4>Offer a ride</h4>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Watch How It Works</h3>
+    <div class="row main-content">
+        <div class="col-sm-4">
+            <h3><a href="#">Watch How It Works</a></h3>
         </div>
-        <div class="col-md-4">
-            <h3>Good Deals</h3>
+        <div class="col-sm-4">
+            <h3><a href="#">Good Deals</a></h3>
         </div>
-        <div class="col-md-4">
-            <h3>Trust Safety & Insurance</h3>
+        <div class="col-sm-4">
+            <h3><a href="#">Trust Safety & Insurance</a></h3>
+            <a href="#"><img src="{{ asset('public/img/home-trust-safety.jpg') }}" class="home-safety">
+                <img src="{{ asset('public/img/trust.png') }}" class="home-trust-icon">
+            </a>
+
+
         </div>
     </div>
 {% endblock %}

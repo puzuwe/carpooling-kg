@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ 'Podorozhniki'|trans}}{% endblock %}</title>
+    <title>{% block title %}{{ 'Podorozhniki'|trans }}{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
@@ -29,13 +29,12 @@
 
     var authurl = '{{ path('_security_check_facebook') }}';
 
-    function goLogIn(){
+    function goLogIn() {
         window.location = authurl;
     }
-
     function onFbInit() {
-        if (typeof(FB) != 'undefined' && FB != null ) {
-            FB.Event.subscribe('auth.statusChange', function(response) {
+        if (typeof(FB) != 'undefined' && FB != null) {
+            FB.Event.subscribe('auth.statusChange', function (response) {
                 setTimeout(goLogIn, 500);
             });
         }
@@ -46,22 +45,22 @@
 <!-- HEADER -->
 {{ include('_header.html.twig') }}
 <!-- BODY -->
-    <div class="container" id="main">
+<div class="container" id="main">
 
-        <!-- Menu shown when user is authenticated. -->
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 margin-bottom-10">
-                        {{ knp_menu_render("PodorozhnikiMainBundle:Builder:userMenu") }}
-                    </div>
+    <!-- Menu shown when user is authenticated. -->
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 margin-bottom-10">
+                    {{ knp_menu_render("PodorozhnikiMainBundle:Builder:userMenu") }}
                 </div>
             </div>
-        {% endif %}
-        {{ render(controller('ApplicationSonataUserBundle:Security:loginModal')) }}
-        {% block body %}
-        {% endblock %}
-    </div>
+        </div>
+    {% endif %}
+    {{ render(controller('ApplicationSonataUserBundle:Security:loginModal')) }}
+    {% block body %}
+    {% endblock %}
+</div>
 
 <!-- FOOTER -->
 {{ include('::_footer.html.twig') }}
@@ -77,7 +76,6 @@
     <script src="{{ asset('public/js/google.js') }}"></script>
     <script src="{{ asset('public/js/main.js') }}"></script>
 {% endblock %}
-
 
 
 </body>

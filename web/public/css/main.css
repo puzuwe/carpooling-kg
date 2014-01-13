@@ -92,6 +92,7 @@ footer {
     height: 358px;
     position: relative;
     margin-left: -15px;
+    margin-right: -15px;
     max-width: 1000px;
     background-size: 100%;
 }
@@ -187,4 +188,38 @@ header {
     position: absolute;
     top: 0;
     width: 0px;
+}
+
+.home-safety {
+    box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.2);
+    display: block;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.main-content .col-sm-4 {
+    border-left: 1px solid #E0DFDF;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.main-content .col-sm-4:first-child {
+    border: 0;
+
+}
+
+.main-content h3 {
+    text-align: center;
+    margin-top: 0;
+
+}
+
+.main-content h3 > a {
+    color: #666666;
+}
+
+.home-trust-icon {
+    bottom: 50px;
+    position: absolute;
+    right: 65px;
 }
