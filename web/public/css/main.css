@@ -1,90 +1,61 @@
-html,body{
-    height: 100%;
-
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-#map-canvas, #map-user-canvas {
-    height: 500px;
-    width: 100%;
-    margin: 0px;
-    padding: 0px
+.container {
+    max-width: 1000px;
 }
-#map-main{
-    width: 100%;
-    height: 600px;
-}
-#map-user-canvas{
-    width: 400px;
-    height: 400px;
-}
-.invisible {
-    visibility: hidden;
-}
-
 .cursor:hover {
     cursor: pointer;
 }
-
-#main {
-    overflow: auto;
-    padding-bottom: 190px;
-    min-height: 100%;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
-    box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
+.driver {
+    background: url('../img/driver-post-trip.png') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 32px;
+    margin: 26px auto;
+    width: 133px;
 }
-
 footer {
     position: relative;
     margin-top: -160px;
-    height: 190px;
+    min-height: 190px;
     clear: both;
     padding-top: 10px;
     background-color: #86BA17;
     max-width: 1000px;
     margin: 0 auto;
 }
-
-.img-sm{
-    width:50px;
-    height: 50px;
+.footer-header {
+    background: none repeat scroll 0 0 #538717;
+    height: 30px;
+    margin-left: -1%;
+    width: 102%;
+    color: #FFFFFF;
+    padding-left: 15px;
+    padding-top: 5px;;
+    position: absolute;
 }
-.img-lg{
-    width: 140px;
-    height: 140px;
-    margin-bottom: 10px;
+.footer-list ul:first-child{
+    color: #ffffff;
 }
-.user-review{
-    margin-bottom: 20px;
-    border-bottom: 2px solid #FF7963;
-
+.footer-list li:nth-child(2){
+    border-top: 0;
 }
-.center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.footer-list .col-sm-4:first-child {
+    padding-left: 28px;
 }
-.margin-bottom-10{
- margin-bottom: 10px;
-}
-.v-center{
-    padding-top: 10%;
-}
-
-.logo{
-    display: block;
-    padding: 10px;
-}
-.logo > img{
-    width: 32px;
+.footer-list li {
+    border-top: 1px solid #9ACC17;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 8px 4px;
 }
 
-.form-search .input-group > .input-group-addon {
-    padding: 0 10px;
-    background-color: #ffffff;
+.footer-list li > a {
+    color: #000000;
 }
-
-.form-search .input-group > .input-group-addon > img {
-    width: 32px;
+.footer-list li:first-child {
+    border-top: 0;
 }
 
 .form-search {
@@ -102,9 +73,21 @@ footer {
     bottom: 20px;
     left: 20px;
 }
+.form-search .input-group > .input-group-addon {
+    padding: 0 10px;
+    background-color: #ffffff;
+}
 
-.container {
+.form-search .input-group > .input-group-addon > img {
+    width: 32px;
+}
+
+header {
+    border-radius: 0 !important;
+    padding: 0;
+    margin: 0 auto;
     max-width: 1000px;
+    margin-bottom: 0 !important;
 }
 
 .home-offer {
@@ -123,73 +106,6 @@ footer {
 .home-offer > h4:last-child {
     margin-left: 50px;
 }
-
-header {
-    border-radius: 0 !important;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 1000px;
-    margin-bottom: 0 !important;
-}
-
-.driver {
-    background: url('../img/driver-post-trip.png') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-    height: 32px;
-    margin: 26px auto;
-    width: 133px;
-}
-
-.footer-list li {
-    border-top: 1px solid #9ACC17;
-    font-weight: bold;
-    line-height: 18px;
-    padding: 8px 4px;
-}
-
-.footer-list li:first-child {
-    border-top: 0;
-}
-
-.footer-list li > a {
-    color: #000000;
-}
-
-.footer-header {
-    background: none repeat scroll 0 0 #538717;
-    height: 30px;
-    margin-left: -1%;
-    width: 102%;
-    color: #FFFFFF;
-    padding-left: 15px;
-    padding-top: 5px;;
-}
-
-.footer-header .col-sm-4:first-child {
-    padding-left: 28px;
-}
-
-.right-triange {
-    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #244217;
-    border-style: solid;
-    border-width: 0 0 10px 10px;
-    height: 0;
-    left: -10px;
-    position: absolute;
-    top: 0;
-    width: 0;
-}
-
-.left-triange {
-    border-style: solid;
-    border-width: 10px 0 0 10px;
-    border-color: transparent transparent transparent #244217;
-    height: 0px;
-    right: -10px;
-    position: absolute;
-    top: 0;
-    width: 0px;
-}
-
 .home-safety {
     box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.2);
     display: block;
@@ -197,6 +113,73 @@ header {
     margin: 10px auto;
 }
 
+
+
+.home-trust-icon {
+    bottom: 50px;
+    position: absolute;
+    right: 65px;
+}
+
+html,body{
+    height: 100%;
+
+}
+.img-lg{
+    width: 140px;
+    height: 140px;
+    margin-bottom: 10px;
+}
+
+.img-sm{
+    width:50px;
+    height: 50px;
+}
+.invisible {
+    visibility: hidden;
+}
+
+.left-triangle {
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #244217;
+    border-style: solid;
+    border-width: 0 0 10px 10px;
+    height: 0px;
+    left: 0px;
+    position: absolute;
+    top: -10px;
+    width: 0px;
+}
+
+.logo{
+    display: block;
+    padding: 10px;
+}
+.logo > img{
+    width: 32px;
+}
+
+#map-canvas, #map-user-canvas {
+    height: 500px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px
+}
+#map-main{
+    width: 100%;
+    height: 600px;
+}
+#map-user-canvas{
+    width: 400px;
+    height: 400px;
+}
+#main {
+    overflow: auto;
+    padding-bottom: 190px;
+    min-height: 100%;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
+    box-shadow: 0px 0px 10px 0px rgba(150, 158, 153, 0.78);
+}
 .main-content .col-sm-4 {
     border-left: 1px solid #E0DFDF;
     height: 200px;
@@ -218,8 +201,25 @@ header {
     color: #666666;
 }
 
-.home-trust-icon {
-    bottom: 50px;
+.margin-bottom-10{
+    margin-bottom: 10px;
+}
+.right-triangle {
+    border-style: solid;
+    border-width: 10px 0 0 10px;
+    border-color: transparent transparent transparent #244217;
+
+    height: 0;
+    right: 0px;
     position: absolute;
-    right: 65px;
+    top: -10px;
+    width: 0;
+}
+.user-review{
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FF7963;
+
+}
+.v-center{
+    padding-top: 10%;
 }
