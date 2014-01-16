@@ -41,7 +41,7 @@ footer {
 .footer-list li:nth-child(2){
     border-top: 0;
 }
-.footer-list .col-sm-4:first-child {
+.footer-list .col-sm-4{
     padding-left: 28px;
 }
 .footer-list li {
@@ -65,7 +65,7 @@ footer {
     margin-left: -15px;
     margin-right: -15px;
     max-width: 1000px;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .form-search > form {

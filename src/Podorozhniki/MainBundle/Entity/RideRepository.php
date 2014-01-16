@@ -35,4 +35,15 @@ class RideRepository extends EntityRepository
 
         return $query->getResult();
     }
+    public function findGoodDeals()
+    {
+        $em = $this->getEntityManager();
+        $repository = $em->getRepository('PodorozhnikiMainBundle:Ride');
+        $query = $repository->createQueryBuilder('r')
+                ->orderBy('r.distance','desc')
+                ->addOrderBy('r.oneseatcost','asc')
+                ->setMaxResults(3)
+                ->getQuery();
+        return $query->getResult();
+    }
 } 

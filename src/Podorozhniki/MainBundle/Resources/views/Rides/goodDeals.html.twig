@@ -1,0 +1,14 @@
+<ul class="list-unstyled">
+    {% for ride in rides %}
+        <li>
+            <a href="{{ path('get_ride',{'id': ride.id}) }}">{{ ride.departure }}
+                <span class="glyphicon glyphicon-arrow-right"></span>
+                {{ ride.destination }}
+            </a>
+            <strong class="text-success">{{ ride.price }}</strong>
+            <br>
+        <span class="text-muted">{{ ride.departuretime | localizeddate('short','none',app.request.locale) }}
+            {{ 'at'|trans }} {{ ride.departuretime|date('h:m') }}</span></li>
+    {% endfor %}
+
+</ul>

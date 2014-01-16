@@ -30,6 +30,7 @@ Departure:        From
 Departureanytime: Any time
 Departuretime:    Departure time
 Destination:      To
+Distance:         Distance
 Driver:           Driver
 Firstname:        Firstname
 from:             From
@@ -53,3 +54,4 @@ to:               To
 topic:            Topic
 Username:         Username
 Who:              I am
+

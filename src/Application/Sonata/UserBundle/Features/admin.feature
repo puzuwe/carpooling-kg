@@ -6,8 +6,8 @@ Feature: Authorization
 # Use @javascript for browser realtime emulation
   Scenario: Sucessfully Authenticate
     Given I am on "admin/login"
-    When I fill in "_username" with "admin"
-    And  I fill in "password" with "admin"
+    When I fill in "_username" with "admin@podorozhniki.kg"
+    And  I fill in "password" with "password"
     And I press "_submit"
     Then I should be on "/admin/dashboard"
     And I should see "Logout"

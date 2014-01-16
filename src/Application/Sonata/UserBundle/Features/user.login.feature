@@ -9,10 +9,10 @@ Feature: User Login
     Given I am on "/"
     Then I should see "Login"
     When I follow "Login"
-    Then I should be on "/en/login"
+    Then I should be on "/login"
     Then I should see "Register"
     And  I should see "Forgot password?"
 
   Scenario: Forgot password
-    Given I am on "/en/resetting/request"
+    Given I am on "en/resetting/request"
     Then I should see "Username or email address:"

@@ -10,5 +10,5 @@ parameters:
     mailer_host: null
     mailer_user: nurolopher@gmail.com
     mailer_password: Nurolopher!
-    locale: ru
+    locale: en
     secret: ThisTokenIsNotSoSecretChangeIt

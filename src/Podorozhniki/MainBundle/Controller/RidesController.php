@@ -43,4 +43,9 @@ class RidesController extends FOSRestController
         return $response;
 
     }
+
+    public function getGoodDealsAction(){
+        $rides = $this->getDoctrine()->getRepository('PodorozhnikiMainBundle:Ride')->findGoodDeals();
+        return $this->render('PodorozhnikiMainBundle:Rides:goodDeals.html.twig',array('rides'=>$rides));
+    }
 } 
